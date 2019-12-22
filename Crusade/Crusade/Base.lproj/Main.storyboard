@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +21,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-152" y="-40"/>
+        </scene>
+        <!--Menu Controller-->
+        <scene sceneID="LYg-da-so1">
+            <objects>
+                <viewController storyboardIdentifier="MenuControllerId" id="5ft-N6-0MK" customClass="MenuController" customModule="Crusade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w8e-t5-Lpi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YNO-4u-DAc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znh-50-vei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="-39"/>
+        </scene>
+        <!--Center Controller-->
+        <scene sceneID="8Cp-wT-4Wb">
+            <objects>
+                <viewController storyboardIdentifier="CenterControllerId" id="12G-eg-B4h" customClass="CenterController" customModule="Crusade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9P8-q4-XJO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3e8-oP-rGS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3e8-oP-rGS" firstAttribute="trailing" secondItem="IE0-Mk-7rv" secondAttribute="trailing" id="38S-HH-Lzo"/>
+                            <constraint firstItem="3e8-oP-rGS" firstAttribute="leading" secondItem="IE0-Mk-7rv" secondAttribute="leading" id="7QL-0s-R3N"/>
+                            <constraint firstItem="IE0-Mk-7rv" firstAttribute="bottom" secondItem="3e8-oP-rGS" secondAttribute="bottom" constant="-34" id="TRC-iP-mAW"/>
+                            <constraint firstItem="3e8-oP-rGS" firstAttribute="top" secondItem="IE0-Mk-7rv" secondAttribute="top" constant="-44" id="rSx-X1-Rbc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IE0-Mk-7rv"/>
+                    </view>
+                    <connections>
+                        <outlet property="container" destination="3e8-oP-rGS" id="H69-KH-ab4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAJ-G9-kOf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210.144927536232" y="-39.508928571428569"/>
+        </scene>
+        <!--Vote Controller-->
+        <scene sceneID="hiU-mn-USg">
+            <objects>
+                <viewController storyboardIdentifier="VoteControllerId" id="sbn-w8-BFq" customClass="VoteController" customModule="Crusade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sdo-tP-ex1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GKL-fA-kDv"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Zx-9R-bfn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="-40"/>
+        </scene>
+        <!--Canvass Controller-->
+        <scene sceneID="bc3-AO-7nY">
+            <objects>
+                <viewController storyboardIdentifier="CanvassControllerId" id="Ka3-Lp-FFv" customClass="CanvassController" customModule="Crusade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7wU-c9-36I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ENE-S1-wZJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5gz-Ng-svH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2529" y="-40"/>
         </scene>
     </scenes>
 </document>

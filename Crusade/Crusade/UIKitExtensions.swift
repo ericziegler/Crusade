@@ -8,12 +8,12 @@ import UIKit
 
 func applyApplicationAppearanceProperties() {
     UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.applicationFontOfSize(17)], for: .normal)
-    UINavigationBar.appearance().tintColor = UIColor.white
-    UINavigationBar.appearance().barTintColor = UIColor.main
+    UINavigationBar.appearance().tintColor = UIColor.appWhite
+    UINavigationBar.appearance().barTintColor = UIColor.appLightBlue
 }
 
 func navTitleTextAttributes() -> [NSAttributedString.Key : Any] {
-    return [NSAttributedString.Key.font : UIFont.applicationBoldFontOfSize(21.0), .foregroundColor : UIColor.navAccent]
+    return [NSAttributedString.Key.font : UIFont.applicationBoldFontOfSize(28.0), .foregroundColor : UIColor.appWhite]
 }
 
 // MARK: - UIImage
@@ -85,12 +85,6 @@ class BoldLabel: ApplicationStyleLabel {
     }
 }
 
-class LightLabel: ApplicationStyleLabel {
-    override func commonInit() {
-        self.font = UIFont.applicationLightFontOfSize(self.font.pointSize)
-    }
-}
-
 // MARK: - UIButton
 
 class ApplicationStyleButton : UIButton {
@@ -127,28 +121,16 @@ class BoldButton: ApplicationStyleButton {
     }
 }
 
-class LightButton: ApplicationStyleButton {
-    override func commonInit() {
-        if let font = self.titleLabel?.font {
-            self.titleLabel?.font = UIFont.applicationLightFontOfSize(font.pointSize)
-        }
-    }
-}
-
 // MARK: - UIFont
 
 extension UIFont {
 
     class func applicationFontOfSize(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "HelveticaNeue", size: size)!
+        return UIFont(name: "SinhalaSangamMN", size: size)!
     }
 
     class func applicationBoldFontOfSize(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "HelveticaNeue-Bold", size: size)!
-    }
-
-    class func applicationLightFontOfSize(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "HelveticaNeue-Light", size: size)!
+        return UIFont(name: "SinhalaSangamMN-Bold", size: size)!
     }
 
     class func debugListFonts() {
@@ -203,24 +185,44 @@ extension UIColor {
                        alpha: alpha == -1 ? a : alpha)
     }
 
-    class var main: UIColor {
-        return UIColor(hex: 0xc83637)
+    class var appLightBlue: UIColor {
+        return UIColor(hex: 0x15b0f0)
     }
 
-    class var navAccent: UIColor {
+    class var appBlue: UIColor {
+        return UIColor(hex: 0x2e519c)
+    }
+
+    class var appDarkBlue: UIColor {
+        return UIColor(hex: 0x003380)
+    }
+
+    class var appWhite: UIColor {
         return UIColor.white
     }
 
-    class var accent: UIColor {
-        return UIColor(hex: 0x000000)
+    class var appOffWhite: UIColor {
+        return UIColor(hex: 0xe6eff6)
     }
 
-    class var lightText: UIColor {
-        return UIColor(hex: 0xB1BDD8)
+    class var appBlack: UIColor {
+        return UIColor.black
     }
 
-    class var tableSectionColor: UIColor {
-        return UIColor(hex: 0x0C2F6F)
+    class var appLightGray: UIColor {
+        return UIColor(hex: 0xdddddd)
+    }
+
+    class var appGray: UIColor {
+        return UIColor(hex: 0xbbbbbb)
+    }
+
+    class var appDarkGray: UIColor {
+        return UIColor(hex: 0x777777)
+    }
+
+    class var appRed: UIColor {
+        return UIColor(hex: 0xf2192e)
     }
 
 }

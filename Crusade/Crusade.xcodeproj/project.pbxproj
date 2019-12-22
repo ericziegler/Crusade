@@ -18,6 +18,10 @@
 		7820B53523AE7580003B0DAA /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53423AE7580003B0DAA /* UIKitExtensions.swift */; };
 		7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53623AE7593003B0DAA /* FoundationExtensions.swift */; };
 		7820B53923AE77DA003B0DAA /* LocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53823AE77DA003B0DAA /* LocationExtensions.swift */; };
+		788B5E1823AF724D00CABDEF /* CenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1723AF724D00CABDEF /* CenterController.swift */; };
+		788B5E1A23AF725E00CABDEF /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1923AF725E00CABDEF /* MenuController.swift */; };
+		788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1B23AF792E00CABDEF /* CanvassController.swift */; };
+		788B5E1E23AF796300CABDEF /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1D23AF796300CABDEF /* VoteController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		7820B53423AE7580003B0DAA /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		7820B53623AE7593003B0DAA /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		7820B53823AE77DA003B0DAA /* LocationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationExtensions.swift; sourceTree = "<group>"; };
+		788B5E1723AF724D00CABDEF /* CenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterController.swift; sourceTree = "<group>"; };
+		788B5E1923AF725E00CABDEF /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		788B5E1B23AF792E00CABDEF /* CanvassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvassController.swift; sourceTree = "<group>"; };
+		788B5E1D23AF796300CABDEF /* VoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,10 @@
 				7820B52D23AE74BE003B0DAA /* BaseViewControllers */,
 				7820B51823AE7433003B0DAA /* Main.storyboard */,
 				7820B51623AE7433003B0DAA /* MainController.swift */,
+				788B5E1723AF724D00CABDEF /* CenterController.swift */,
+				788B5E1923AF725E00CABDEF /* MenuController.swift */,
+				788B5E1B23AF792E00CABDEF /* CanvassController.swift */,
+				788B5E1D23AF796300CABDEF /* VoteController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -217,14 +229,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788B5E1A23AF725E00CABDEF /* MenuController.swift in Sources */,
 				7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */,
+				788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */,
 				7820B51723AE7433003B0DAA /* MainController.swift in Sources */,
 				7820B53123AE74E0003B0DAA /* BaseViewController.swift in Sources */,
 				7820B53523AE7580003B0DAA /* UIKitExtensions.swift in Sources */,
 				7820B53923AE77DA003B0DAA /* LocationExtensions.swift in Sources */,
 				7820B53323AE74F0003B0DAA /* BaseTableViewController.swift in Sources */,
 				7820B51523AE7433003B0DAA /* AppDelegate.swift in Sources */,
+				788B5E1E23AF796300CABDEF /* VoteController.swift in Sources */,
 				7820B52F23AE74D5003B0DAA /* BaseNavigationController.swift in Sources */,
+				788B5E1823AF724D00CABDEF /* CenterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
