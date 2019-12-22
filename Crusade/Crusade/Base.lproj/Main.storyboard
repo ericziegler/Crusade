@@ -209,15 +209,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-GO-6kL">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-GO-6kL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ka3-Lp-FFv" id="65O-hL-Akp"/>
+                                </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EZ-We-UPq">
+                                <rect key="frame" x="353" y="788" width="41" height="44"/>
+                                <state key="normal" image="UserLocation"/>
+                                <connections>
+                                    <action selector="curLocationTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="iyB-6E-VL2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.93725490199999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ENE-S1-wZJ" firstAttribute="bottom" secondItem="XDd-GO-6kL" secondAttribute="bottom" constant="-34" id="6JX-4x-5lN"/>
                             <constraint firstItem="ENE-S1-wZJ" firstAttribute="trailing" secondItem="XDd-GO-6kL" secondAttribute="trailing" id="6dA-9K-d1U"/>
+                            <constraint firstItem="ENE-S1-wZJ" firstAttribute="bottom" secondItem="3EZ-We-UPq" secondAttribute="bottom" constant="30" id="BSr-FK-DzF"/>
                             <constraint firstItem="XDd-GO-6kL" firstAttribute="leading" secondItem="ENE-S1-wZJ" secondAttribute="leading" id="FwM-Wa-lZw"/>
+                            <constraint firstItem="ENE-S1-wZJ" firstAttribute="trailing" secondItem="3EZ-We-UPq" secondAttribute="trailing" constant="20" id="bdK-Qr-NB1"/>
                             <constraint firstItem="XDd-GO-6kL" firstAttribute="top" secondItem="ENE-S1-wZJ" secondAttribute="top" constant="-44" id="lPD-Pr-G29"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ENE-S1-wZJ"/>
@@ -233,5 +245,6 @@
     </scenes>
     <resources>
         <image name="MenuHeader" width="83" height="90"/>
+        <image name="UserLocation" width="41" height="44"/>
     </resources>
 </document>
