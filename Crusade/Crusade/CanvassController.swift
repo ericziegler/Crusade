@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 // MARK: - Constants
 
 let CanvassControllerId = "CanvassControllerId"
 
 class CanvassController: BaseViewController {
+
+    // MARK: - Properties
+
+    @IBOutlet var map: MKMapView!
 
     // MARK: - Init
 

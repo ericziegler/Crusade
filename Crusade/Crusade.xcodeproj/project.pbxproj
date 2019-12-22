@@ -22,6 +22,14 @@
 		788B5E1A23AF725E00CABDEF /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1923AF725E00CABDEF /* MenuController.swift */; };
 		788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1B23AF792E00CABDEF /* CanvassController.swift */; };
 		788B5E1E23AF796300CABDEF /* VoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1D23AF796300CABDEF /* VoteController.swift */; };
+		788B5E2023AF836D00CABDEF /* MenuHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1F23AF836D00CABDEF /* MenuHeaderCell.swift */; };
+		788B5E2223AF919A00CABDEF /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E2123AF919A00CABDEF /* MenuCell.swift */; };
+		788B5E2923AF9CDF00CABDEF /* absentee.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2423AF9CDF00CABDEF /* absentee.html */; };
+		788B5E2A23AF9CDF00CABDEF /* register.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2523AF9CDF00CABDEF /* register.html */; };
+		788B5E2B23AF9CDF00CABDEF /* votepledge.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2623AF9CDF00CABDEF /* votepledge.html */; };
+		788B5E2C23AF9CDF00CABDEF /* votereminder.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2723AF9CDF00CABDEF /* votereminder.html */; };
+		788B5E2D23AF9CDF00CABDEF /* checkregistration.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2823AF9CDF00CABDEF /* checkregistration.html */; };
+		788B5E2F23AFA47200CABDEF /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E2E23AFA47200CABDEF /* MenuManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +50,14 @@
 		788B5E1923AF725E00CABDEF /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		788B5E1B23AF792E00CABDEF /* CanvassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvassController.swift; sourceTree = "<group>"; };
 		788B5E1D23AF796300CABDEF /* VoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteController.swift; sourceTree = "<group>"; };
+		788B5E1F23AF836D00CABDEF /* MenuHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeaderCell.swift; sourceTree = "<group>"; };
+		788B5E2123AF919A00CABDEF /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		788B5E2423AF9CDF00CABDEF /* absentee.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = absentee.html; sourceTree = "<group>"; };
+		788B5E2523AF9CDF00CABDEF /* register.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = register.html; sourceTree = "<group>"; };
+		788B5E2623AF9CDF00CABDEF /* votepledge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = votepledge.html; sourceTree = "<group>"; };
+		788B5E2723AF9CDF00CABDEF /* votereminder.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = votereminder.html; sourceTree = "<group>"; };
+		788B5E2823AF9CDF00CABDEF /* checkregistration.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = checkregistration.html; sourceTree = "<group>"; };
+		788B5E2E23AFA47200CABDEF /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +99,7 @@
 		7820B52623AE744B003B0DAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				788B5E2323AF9CC100CABDEF /* HTML */,
 				7820B51B23AE7433003B0DAA /* Assets.xcassets */,
 				7820B51D23AE7433003B0DAA /* LaunchScreen.storyboard */,
 				7820B52023AE7433003B0DAA /* Info.plist */,
@@ -115,6 +132,8 @@
 		7820B52923AE7468003B0DAA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				788B5E1F23AF836D00CABDEF /* MenuHeaderCell.swift */,
+				788B5E2123AF919A00CABDEF /* MenuCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -122,6 +141,7 @@
 		7820B52A23AE746D003B0DAA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				788B5E2E23AFA47200CABDEF /* MenuManager.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -156,6 +176,18 @@
 				7820B53223AE74F0003B0DAA /* BaseTableViewController.swift */,
 			);
 			name = BaseViewControllers;
+			sourceTree = "<group>";
+		};
+		788B5E2323AF9CC100CABDEF /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				788B5E2423AF9CDF00CABDEF /* absentee.html */,
+				788B5E2823AF9CDF00CABDEF /* checkregistration.html */,
+				788B5E2523AF9CDF00CABDEF /* register.html */,
+				788B5E2623AF9CDF00CABDEF /* votepledge.html */,
+				788B5E2723AF9CDF00CABDEF /* votereminder.html */,
+			);
+			name = HTML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,9 +248,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788B5E2A23AF9CDF00CABDEF /* register.html in Resources */,
+				788B5E2C23AF9CDF00CABDEF /* votereminder.html in Resources */,
+				788B5E2D23AF9CDF00CABDEF /* checkregistration.html in Resources */,
 				7820B51F23AE7433003B0DAA /* LaunchScreen.storyboard in Resources */,
 				7820B51C23AE7433003B0DAA /* Assets.xcassets in Resources */,
+				788B5E2B23AF9CDF00CABDEF /* votepledge.html in Resources */,
 				7820B51A23AE7433003B0DAA /* Main.storyboard in Resources */,
+				788B5E2923AF9CDF00CABDEF /* absentee.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788B5E2F23AFA47200CABDEF /* MenuManager.swift in Sources */,
+				788B5E2223AF919A00CABDEF /* MenuCell.swift in Sources */,
 				788B5E1A23AF725E00CABDEF /* MenuController.swift in Sources */,
+				788B5E2023AF836D00CABDEF /* MenuHeaderCell.swift in Sources */,
 				7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */,
 				788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */,
 				7820B51723AE7433003B0DAA /* MainController.swift in Sources */,

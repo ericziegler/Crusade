@@ -209,6 +209,14 @@ extension UIColor {
         return UIColor.black
     }
 
+    class var appBlueGray: UIColor {
+        return UIColor(hex: 0x243b5c)
+    }
+
+    class var appLightBlueGray: UIColor {
+        return UIColor(hex: 0x4774b4)
+    }
+
     class var appLightGray: UIColor {
         return UIColor(hex: 0xdddddd)
     }

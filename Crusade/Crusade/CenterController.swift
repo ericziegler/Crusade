@@ -23,26 +23,27 @@ class CenterController: BaseViewController {
     // MARK: - Properties
 
     @IBOutlet var container: UIView!
-    var initialController: UIViewController!
     var delegate: CenterControllerDelegate?
+    var initialController: UIViewController!
+    var initialHeader = MenuItemType.routes.headerTitle
 
     // MARK: Init
 
-    class func createControllerWith(initialController: UIViewController) -> CenterController {
+    class func createControllerWith(initialController: UIViewController, initialHeader: String) -> CenterController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController: CenterController = storyboard.instantiateViewController(withIdentifier: CenterControllerId) as! CenterController
         viewController.initialController = initialController
+        viewController.initialHeader = initialHeader
         return viewController
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavBar()
-        displayController(initialController)
+        displayController(initialController, headerTitle: initialHeader)
     }
 
     private func initNavBar() {
-        self.title = "Crusade"
         self.navigationController?.navigationBar.titleTextAttributes = navTitleTextAttributes()
 
         if let menuImage = UIImage(named: "Menu")?.maskedImageWithColor(.appWhite) {
@@ -56,10 +57,11 @@ class CenterController: BaseViewController {
         }
     }
 
-    func displayController(_ controller: UIViewController) {
+    func displayController(_ controller: UIViewController, headerTitle: String) {
         container.addSubview(controller.view)
         addChild(controller)
         controller.didMove(toParent: self)
+        self.title = headerTitle
     }
 
     // MARK: - Actions

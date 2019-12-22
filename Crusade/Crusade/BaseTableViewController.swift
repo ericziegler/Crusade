@@ -14,6 +14,10 @@ class BaseTableViewController: UITableViewController {
         self.navigationController?.navigationBar.titleTextAttributes = navTitleTextAttributes()
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }

@@ -29,6 +29,7 @@ class MainController: BaseViewController {
     var leftController: MenuController!
     var canvassController: CanvassController!
     var voteController: VoteController!
+    var currentItem = MenuItemType.routes
     var currentState: SlideOutState = .allCollapsed {
       didSet {
         let shouldShowShadow = currentState != .allCollapsed
@@ -55,7 +56,7 @@ class MainController: BaseViewController {
     }
 
     private func setupCenterController() {
-        centerController = CenterController.createControllerWith(initialController: canvassController)
+        centerController = CenterController.createControllerWith(initialController: canvassController, initialHeader: currentItem.headerTitle)
         centerController.delegate = self
         centerNavController = BaseNavigationController(rootViewController: centerController)
         view.addSubview(centerNavController.view)
@@ -82,6 +83,7 @@ class MainController: BaseViewController {
     // MARK: - Panel Navigation
 
     private func handleToggleLeft() {
+        self.view.endEditing(true)
         let notAlreadyExpanded = (currentState != .leftExpanded)
         if notAlreadyExpanded {
           addLeftController()
@@ -95,6 +97,7 @@ class MainController: BaseViewController {
         let vc = MenuController.createController()
         addChildSidePanelController(vc)
         leftController = vc
+        leftController.delegate = self
     }
 
     private func addChildSidePanelController(_ menuController: MenuController) {
@@ -134,11 +137,33 @@ class MainController: BaseViewController {
 
 }
 
+// MARK: - CenterControllerDelegate
+
 extension MainController: CenterControllerDelegate {
 
   func toggleLeftPanel() {
     handleToggleLeft()
   }
+
+}
+
+// MARK: - MenuControllerDelegate
+
+extension MainController: MenuControllerDelegate {
+
+    func didSelectItem(menuItem: MenuItemType) {
+        if currentItem != menuItem {
+            if menuItem == .routes {
+                centerController.displayController(canvassController, headerTitle: menuItem.headerTitle)
+            } else {
+                centerController.displayController(voteController, headerTitle: menuItem.headerTitle)
+                voteController.itemType = menuItem
+                voteController.loadRequest()
+            }
+            currentItem = menuItem
+        }
+        toggleLeftPanel()
+    }
 
 }
 
