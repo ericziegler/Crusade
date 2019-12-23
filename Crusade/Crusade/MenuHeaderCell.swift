@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Constants
 
 let MenuHeaderCellId = "MenuHeaderCellId"
-let MenuHeaderHeight: CGFloat = 110
+let MenuHeaderHeight: CGFloat = 115
 
 class MenuHeaderCell: UITableViewCell {
 

@@ -113,8 +113,6 @@ class MainController: BaseViewController {
       } else {
         animateCenterPanelXPosition(targetPosition: 0) { _ in
           self.currentState = .allCollapsed
-          self.leftController?.view.removeFromSuperview()
-          self.leftController = nil
         }
       }
     }

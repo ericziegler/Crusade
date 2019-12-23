@@ -58,7 +58,7 @@ class CenterController: BaseViewController {
     }
 
     func displayController(_ controller: UIViewController, headerTitle: String) {
-        container.addSubview(controller.view)
+        controller.view.fillInParentView(parentView: container)
         addChild(controller)
         controller.didMove(toParent: self)
         self.title = headerTitle

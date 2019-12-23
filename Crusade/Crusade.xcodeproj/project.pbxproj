@@ -30,6 +30,7 @@
 		788B5E2C23AF9CDF00CABDEF /* votereminder.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2723AF9CDF00CABDEF /* votereminder.html */; };
 		788B5E2D23AF9CDF00CABDEF /* checkregistration.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2823AF9CDF00CABDEF /* checkregistration.html */; };
 		788B5E2F23AFA47200CABDEF /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E2E23AFA47200CABDEF /* MenuManager.swift */; };
+		788B5E3123B12C6C00CABDEF /* StreetListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3023B12C6C00CABDEF /* StreetListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		788B5E2723AF9CDF00CABDEF /* votereminder.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = votereminder.html; sourceTree = "<group>"; };
 		788B5E2823AF9CDF00CABDEF /* checkregistration.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = checkregistration.html; sourceTree = "<group>"; };
 		788B5E2E23AFA47200CABDEF /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
+		788B5E3023B12C6C00CABDEF /* StreetListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				788B5E1923AF725E00CABDEF /* MenuController.swift */,
 				788B5E1B23AF792E00CABDEF /* CanvassController.swift */,
 				788B5E1D23AF796300CABDEF /* VoteController.swift */,
+				788B5E3023B12C6C00CABDEF /* StreetListController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				7820B53923AE77DA003B0DAA /* LocationExtensions.swift in Sources */,
 				7820B53323AE74F0003B0DAA /* BaseTableViewController.swift in Sources */,
 				7820B51523AE7433003B0DAA /* AppDelegate.swift in Sources */,
+				788B5E3123B12C6C00CABDEF /* StreetListController.swift in Sources */,
 				788B5E1E23AF796300CABDEF /* VoteController.swift in Sources */,
 				7820B52F23AE74D5003B0DAA /* BaseNavigationController.swift in Sources */,
 				788B5E1823AF724D00CABDEF /* CenterController.swift in Sources */,

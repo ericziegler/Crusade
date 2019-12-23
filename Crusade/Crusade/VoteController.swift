@@ -17,8 +17,8 @@ class VoteController: BaseViewController {
 
     // MARK: - Properties
 
-    @IBOutlet var voteWebView: WKWebView!
-    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    var voteWebView: WKWebView!
+    var loadingIndicator: UIActivityIndicatorView!
     var itemType = MenuItemType.registerVoter
 
     // MARK: - Init
@@ -27,6 +27,32 @@ class VoteController: BaseViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController: VoteController = storyboard.instantiateViewController(withIdentifier: VoteControllerId) as! VoteController
         return viewController
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureWebView()
+        setupLoadingIndicator()
+    }
+
+    private func configureWebView() {
+        let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+        let userScript = WKUserScript(source: jscript, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        let wkUController = WKUserContentController()
+        wkUController.addUserScript(userScript)
+        let wkWebConfig = WKWebViewConfiguration()
+        wkWebConfig.userContentController = wkUController
+
+        voteWebView = WKWebView(frame: view.bounds, configuration: wkWebConfig)
+        voteWebView.fillInParentView(parentView: view)
+        voteWebView.navigationDelegate = self
+    }
+
+    private func setupLoadingIndicator() {
+        loadingIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        loadingIndicator.color = UIColor.appDarkGray
+        loadingIndicator.fillInParentView(parentView: view)
+        loadingIndicator.isHidden = true
     }
 
     // MARK: - Loading
