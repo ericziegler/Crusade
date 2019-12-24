@@ -179,32 +179,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-GO-6kL">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fG-dk-rwf" userLabel="Container">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Ka3-Lp-FFv" id="65O-hL-Akp"/>
-                                </connections>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EZ-We-UPq" userLabel="CurLoc Button">
-                                <rect key="frame" x="353" y="798" width="41" height="44"/>
-                                <state key="normal" image="UserLocation"/>
-                                <connections>
-                                    <action selector="curLocationTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="iyB-6E-VL2"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDd-GO-6kL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="806"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ka3-Lp-FFv" id="65O-hL-Akp"/>
+                                        </connections>
+                                    </mapView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mr-UG-Gkl" userLabel="Info View">
+                                        <rect key="frame" x="0.0" y="806" width="414" height="90"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234 Placeholder Ave." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.65000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="B3C-zG-kAY" customClass="BoldLabel" customModule="Crusade" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="17.5" width="331" height="35"/>
+                                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="26"/>
+                                                <color key="textColor" white="0.202349101" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpC-ir-Y6B">
+                                                <rect key="frame" x="347" y="7.5" width="55" height="55"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="KpD-JH-b48"/>
+                                                    <constraint firstAttribute="width" constant="55" id="vZI-fI-Fnj"/>
+                                                </constraints>
+                                                <state key="normal" image="Checkmark"/>
+                                                <connections>
+                                                    <action selector="checkTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="O4Z-ub-ECk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuZ-R8-nli" userLabel="Info Button">
+                                                <rect key="frame" x="8" y="20" width="331" height="30"/>
+                                                <connections>
+                                                    <action selector="infoTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="b8t-xi-Jyf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="MpC-ir-Y6B" firstAttribute="leading" secondItem="SuZ-R8-nli" secondAttribute="trailing" constant="8" id="5FN-uj-oEJ"/>
+                                            <constraint firstAttribute="height" constant="90" id="NXO-Lh-frg"/>
+                                            <constraint firstItem="SuZ-R8-nli" firstAttribute="leading" secondItem="8mr-UG-Gkl" secondAttribute="leading" constant="8" id="OQt-Y7-Em5"/>
+                                            <constraint firstItem="B3C-zG-kAY" firstAttribute="centerY" secondItem="MpC-ir-Y6B" secondAttribute="centerY" id="X19-46-cny"/>
+                                            <constraint firstItem="SuZ-R8-nli" firstAttribute="centerY" secondItem="MpC-ir-Y6B" secondAttribute="centerY" id="aS7-gg-HgY"/>
+                                            <constraint firstItem="MpC-ir-Y6B" firstAttribute="centerY" secondItem="8mr-UG-Gkl" secondAttribute="centerY" constant="-10" id="atv-d3-noM"/>
+                                            <constraint firstItem="B3C-zG-kAY" firstAttribute="leading" secondItem="8mr-UG-Gkl" secondAttribute="leading" constant="8" id="b9u-6U-76P"/>
+                                            <constraint firstItem="MpC-ir-Y6B" firstAttribute="leading" secondItem="B3C-zG-kAY" secondAttribute="trailing" constant="8" id="e1c-ir-sm1"/>
+                                            <constraint firstAttribute="trailing" secondItem="MpC-ir-Y6B" secondAttribute="trailing" constant="12" id="uBu-fr-470"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EZ-We-UPq" userLabel="CurLoc Button">
+                                        <rect key="frame" x="365" y="52" width="41" height="44"/>
+                                        <state key="normal" image="UserLocation"/>
+                                        <connections>
+                                            <action selector="curLocationTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="iyB-6E-VL2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XDd-GO-6kL" firstAttribute="leading" secondItem="8fG-dk-rwf" secondAttribute="leading" id="3H1-tM-nUL"/>
+                                    <constraint firstAttribute="trailing" secondItem="3EZ-We-UPq" secondAttribute="trailing" constant="8" id="4kv-zj-y2T"/>
+                                    <constraint firstItem="8mr-UG-Gkl" firstAttribute="leading" secondItem="8fG-dk-rwf" secondAttribute="leading" id="7tY-ih-fTA"/>
+                                    <constraint firstItem="XDd-GO-6kL" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" id="BaB-iY-GsD"/>
+                                    <constraint firstItem="8mr-UG-Gkl" firstAttribute="top" secondItem="XDd-GO-6kL" secondAttribute="bottom" id="D0N-2V-ODp"/>
+                                    <constraint firstAttribute="trailing" secondItem="XDd-GO-6kL" secondAttribute="trailing" id="bMd-ZK-aHk"/>
+                                    <constraint firstItem="3EZ-We-UPq" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" constant="52" id="dik-FL-UYL"/>
+                                    <constraint firstAttribute="bottom" secondItem="8mr-UG-Gkl" secondAttribute="bottom" id="lEt-ta-bJk"/>
+                                    <constraint firstAttribute="trailing" secondItem="8mr-UG-Gkl" secondAttribute="trailing" id="y9o-yk-kbv"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.93725490199999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ENE-S1-wZJ" firstAttribute="bottom" secondItem="XDd-GO-6kL" secondAttribute="bottom" constant="-34" id="6JX-4x-5lN"/>
-                            <constraint firstItem="ENE-S1-wZJ" firstAttribute="trailing" secondItem="XDd-GO-6kL" secondAttribute="trailing" id="6dA-9K-d1U"/>
-                            <constraint firstItem="ENE-S1-wZJ" firstAttribute="bottom" secondItem="3EZ-We-UPq" secondAttribute="bottom" constant="20" id="BSr-FK-DzF"/>
-                            <constraint firstItem="XDd-GO-6kL" firstAttribute="leading" secondItem="ENE-S1-wZJ" secondAttribute="leading" id="FwM-Wa-lZw"/>
-                            <constraint firstItem="ENE-S1-wZJ" firstAttribute="trailing" secondItem="3EZ-We-UPq" secondAttribute="trailing" constant="20" id="bdK-Qr-NB1"/>
-                            <constraint firstItem="XDd-GO-6kL" firstAttribute="top" secondItem="ENE-S1-wZJ" secondAttribute="top" constant="-44" id="lPD-Pr-G29"/>
+                            <constraint firstItem="8fG-dk-rwf" firstAttribute="top" secondItem="7wU-c9-36I" secondAttribute="top" id="J3q-dC-Sou"/>
+                            <constraint firstItem="8fG-dk-rwf" firstAttribute="leading" secondItem="ENE-S1-wZJ" secondAttribute="leading" id="Mcn-nX-haO"/>
+                            <constraint firstItem="8fG-dk-rwf" firstAttribute="trailing" secondItem="ENE-S1-wZJ" secondAttribute="trailing" id="RVR-At-VZQ"/>
+                            <constraint firstAttribute="bottom" secondItem="8fG-dk-rwf" secondAttribute="bottom" id="wjh-bR-LP9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ENE-S1-wZJ"/>
                     </view>
                     <connections>
+                        <outlet property="checkButton" destination="MpC-ir-Y6B" id="dVk-Vn-IO9"/>
+                        <outlet property="infoHeightConstraint" destination="NXO-Lh-frg" id="3Pf-eK-dgf"/>
+                        <outlet property="infoLabel" destination="B3C-zG-kAY" id="dtz-nH-vxa"/>
                         <outlet property="map" destination="XDd-GO-6kL" id="Wtf-Xj-AOn"/>
                     </connections>
                 </viewController>
@@ -248,6 +306,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Checkmark" width="44" height="33"/>
         <image name="MenuHeader" width="83" height="90"/>
         <image name="UserLocation" width="41" height="44"/>
     </resources>

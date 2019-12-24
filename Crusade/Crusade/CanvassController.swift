@@ -17,12 +17,17 @@ let MapPinStandardIdentifier = "MapPinStandardIdentifier"
 let MapDirectionIdentifier = "MapDirectionIdentifier"
 let MapSourceIdentifier = "MapSourceIdentifier"
 let MapDestinationIdentifier = "MapDestinationIdentifier"
+let checkmarkAlpha: CGFloat = 0.3
+let infoHeightConstant: CGFloat = 90
 
 class CanvassController: UIViewController {
 
     // MARK: - Properties
 
     @IBOutlet var map: MKMapView!
+    @IBOutlet var infoHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var infoLabel: BoldLabel!
+    @IBOutlet var checkButton: UIButton!
     var sourceAnnotation: MKPointAnnotation?
     var destinationAnnotation: MKPointAnnotation?
     var directions: [MKRoute.Step]?
@@ -63,6 +68,14 @@ class CanvassController: UIViewController {
 
     @IBAction func curLocationTapped(_ sender: AnyObject) {
         moveToCurrentLocation(animated: true)
+    }
+
+    @IBAction func checkTapped(_ sender: AnyObject) {
+
+    }
+
+    @IBAction func infoTapped(_ sender: AnyObject) {
+
     }
 
     // MARK: - Map Drawing
