@@ -1,5 +1,5 @@
 //
-//  LocationExtensions.swift
+//  MapKitExtensions.swift
 //
 
 import Foundation
@@ -14,6 +14,15 @@ public extension MKMultiPoint {
         var coords = [CLLocationCoordinate2D](repeating: kCLLocationCoordinate2DInvalid, count: pointCount)
         getCoordinates(&coords, range: NSRange(location: 0, length: pointCount))
         return coords
+    }
+
+}
+
+extension MKPointAnnotation {
+
+    convenience init(coordinate: CLLocationCoordinate2D) {
+        self.init()
+        self.coordinate = coordinate
     }
 
 }

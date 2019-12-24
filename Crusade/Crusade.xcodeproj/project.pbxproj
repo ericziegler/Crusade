@@ -17,7 +17,7 @@
 		7820B53323AE74F0003B0DAA /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53223AE74F0003B0DAA /* BaseTableViewController.swift */; };
 		7820B53523AE7580003B0DAA /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53423AE7580003B0DAA /* UIKitExtensions.swift */; };
 		7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53623AE7593003B0DAA /* FoundationExtensions.swift */; };
-		7820B53923AE77DA003B0DAA /* LocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53823AE77DA003B0DAA /* LocationExtensions.swift */; };
+		7820B53923AE77DA003B0DAA /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53823AE77DA003B0DAA /* MapKitExtensions.swift */; };
 		788B5E1823AF724D00CABDEF /* CenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1723AF724D00CABDEF /* CenterController.swift */; };
 		788B5E1A23AF725E00CABDEF /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1923AF725E00CABDEF /* MenuController.swift */; };
 		788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1B23AF792E00CABDEF /* CanvassController.swift */; };
@@ -30,7 +30,8 @@
 		788B5E2C23AF9CDF00CABDEF /* votereminder.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2723AF9CDF00CABDEF /* votereminder.html */; };
 		788B5E2D23AF9CDF00CABDEF /* checkregistration.html in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E2823AF9CDF00CABDEF /* checkregistration.html */; };
 		788B5E2F23AFA47200CABDEF /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E2E23AFA47200CABDEF /* MenuManager.swift */; };
-		788B5E3123B12C6C00CABDEF /* StreetListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3023B12C6C00CABDEF /* StreetListController.swift */; };
+		788B5E3323B1ABB600CABDEF /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3223B1ABB600CABDEF /* RouteManager.swift */; };
+		788B5E3523B1AC2000CABDEF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3423B1AC2000CABDEF /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +47,7 @@
 		7820B53223AE74F0003B0DAA /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		7820B53423AE7580003B0DAA /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		7820B53623AE7593003B0DAA /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
-		7820B53823AE77DA003B0DAA /* LocationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationExtensions.swift; sourceTree = "<group>"; };
+		7820B53823AE77DA003B0DAA /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExtensions.swift; sourceTree = "<group>"; };
 		788B5E1723AF724D00CABDEF /* CenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterController.swift; sourceTree = "<group>"; };
 		788B5E1923AF725E00CABDEF /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		788B5E1B23AF792E00CABDEF /* CanvassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvassController.swift; sourceTree = "<group>"; };
@@ -59,7 +60,8 @@
 		788B5E2723AF9CDF00CABDEF /* votereminder.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = votereminder.html; sourceTree = "<group>"; };
 		788B5E2823AF9CDF00CABDEF /* checkregistration.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = checkregistration.html; sourceTree = "<group>"; };
 		788B5E2E23AFA47200CABDEF /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
-		788B5E3023B12C6C00CABDEF /* StreetListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetListController.swift; sourceTree = "<group>"; };
+		788B5E3223B1ABB600CABDEF /* RouteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
+		788B5E3423B1AC2000CABDEF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +128,7 @@
 			children = (
 				7820B53423AE7580003B0DAA /* UIKitExtensions.swift */,
 				7820B53623AE7593003B0DAA /* FoundationExtensions.swift */,
-				7820B53823AE77DA003B0DAA /* LocationExtensions.swift */,
+				7820B53823AE77DA003B0DAA /* MapKitExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				788B5E2E23AFA47200CABDEF /* MenuManager.swift */,
+				788B5E3223B1ABB600CABDEF /* RouteManager.swift */,
+				788B5E3423B1AC2000CABDEF /* Location.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -156,9 +160,8 @@
 				7820B51623AE7433003B0DAA /* MainController.swift */,
 				788B5E1723AF724D00CABDEF /* CenterController.swift */,
 				788B5E1923AF725E00CABDEF /* MenuController.swift */,
-				788B5E1B23AF792E00CABDEF /* CanvassController.swift */,
 				788B5E1D23AF796300CABDEF /* VoteController.swift */,
-				788B5E3023B12C6C00CABDEF /* StreetListController.swift */,
+				788B5E1B23AF792E00CABDEF /* CanvassController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -274,14 +277,15 @@
 				788B5E1A23AF725E00CABDEF /* MenuController.swift in Sources */,
 				788B5E2023AF836D00CABDEF /* MenuHeaderCell.swift in Sources */,
 				7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */,
+				788B5E3523B1AC2000CABDEF /* Location.swift in Sources */,
 				788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */,
 				7820B51723AE7433003B0DAA /* MainController.swift in Sources */,
+				788B5E3323B1ABB600CABDEF /* RouteManager.swift in Sources */,
 				7820B53123AE74E0003B0DAA /* BaseViewController.swift in Sources */,
 				7820B53523AE7580003B0DAA /* UIKitExtensions.swift in Sources */,
-				7820B53923AE77DA003B0DAA /* LocationExtensions.swift in Sources */,
+				7820B53923AE77DA003B0DAA /* MapKitExtensions.swift in Sources */,
 				7820B53323AE74F0003B0DAA /* BaseTableViewController.swift in Sources */,
 				7820B51523AE7433003B0DAA /* AppDelegate.swift in Sources */,
-				788B5E3123B12C6C00CABDEF /* StreetListController.swift in Sources */,
 				788B5E1E23AF796300CABDEF /* VoteController.swift in Sources */,
 				7820B52F23AE74D5003B0DAA /* BaseNavigationController.swift in Sources */,
 				788B5E1823AF724D00CABDEF /* CenterController.swift in Sources */,

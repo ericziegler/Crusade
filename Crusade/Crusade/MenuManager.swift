@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Enums
 
 enum MenuItemType: String {
-    case routes = "Routes"
+    case routes = "Assistant"
     case registerVoter = "Register to Vote"
     case checkRegistration = "Check Registration"
     case absenteeBallot = "Absentee Ballot"

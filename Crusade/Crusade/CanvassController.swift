@@ -12,16 +12,6 @@ import CoreLocation
 
 // MARK: - Constants
 
-// TODO: EZ - Remove test code
-let coord1 = CLLocationCoordinate2D(latitude: 39.186138, longitude: -84.419120) // 6428 montgomery
-let coord2 = CLLocationCoordinate2D(latitude: 39.185561, longitude: -84.418072) // 6233 beech view
-let coord3 = CLLocationCoordinate2D(latitude: 39.186082, longitude: -84.418373) // 6249 beech view
-let coord4 = CLLocationCoordinate2D(latitude: 39.184947, longitude: -84.417002) // 6201 beech view
-let coord5 = CLLocationCoordinate2D(latitude: 39.185525, longitude: -84.416428) // 6228 rogers park
-let coord6 = CLLocationCoordinate2D(latitude: 39.185783, longitude: -84.416428) // 6238 rogers park
-let coord7 = CLLocationCoordinate2D(latitude: 39.186267, longitude: -84.417206) // 6257 rogers park
-let coord8 = CLLocationCoordinate2D(latitude: 39.186080, longitude: -84.415406) // 3510 zinsle
-let coord9 = CLLocationCoordinate2D(latitude: 39.185652, longitude: -84.415135) // 3519 zinsle
 let CanvassControllerId = "CanvassControllerId"
 let MapPinStandardIdentifier = "MapPinStandardIdentifier"
 let MapDirectionIdentifier = "MapDirectionIdentifier"
@@ -37,7 +27,7 @@ class CanvassController: UIViewController {
     var destinationAnnotation: MKPointAnnotation?
     var directions: [MKRoute.Step]?
     let locationManager = CLLocationManager()
-    let annotationManager = MapAnnotationManager()
+    let routeManager = RouteManager.shared
     var currentLocation: CLLocation?
     var selectedCoord: CLLocationCoordinate2D?
 
@@ -67,7 +57,6 @@ class CanvassController: UIViewController {
 
     private func initMap() {
         map.userTrackingMode = MKUserTrackingMode.followWithHeading
-        addAnnotations()
     }
 
     // MARK: - Actions
@@ -77,49 +66,6 @@ class CanvassController: UIViewController {
     }
 
     // MARK: - Map Drawing
-
-    private func addAnnotations() {
-        var annotation = MKPointAnnotation()
-        annotation.coordinate = coord1
-        map.addAnnotation(annotation)
-
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coord2
-        map.addAnnotation(annotation)
-
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coord3
-        map.addAnnotation(annotation)
-
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coord4
-        map.addAnnotation(annotation)
-
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coord5
-        map.addAnnotation(annotation)
-
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coord6
-        map.addAnnotation(annotation)
-
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coord7
-        map.addAnnotation(annotation)
-
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coord8
-        map.addAnnotation(annotation)
-
-        annotation = MKPointAnnotation()
-        annotation.coordinate = coord9
-        map.addAnnotation(annotation)
-
-        annotationManager.removeAll()
-        for curAnnotation in map.annotations {
-            annotationManager.add(annotation: curAnnotation)
-        }
-    }
 
     private func updateDirectionAnnotations(source: CLLocationCoordinate2D?, destination: CLLocationCoordinate2D?) {
         var annotation = MKPointAnnotation()
@@ -203,8 +149,8 @@ class CanvassController: UIViewController {
 extension CanvassController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let annotation = view.annotation, let referencedAnnotation = annotationManager.annotationFor(guid: MapAnnotationManager.guidFor(annotation: annotation)), !(annotation is MKUserLocation) {
-            selectedCoord = referencedAnnotation.coordinate
+        if let annotation = view.annotation, let _ = routeManager.locationFor(guid: RouteManager.guidFor(annotation: annotation))?.annotation, !(annotation is MKUserLocation) {
+            selectedCoord = annotation.coordinate
         }
         drawRouteBetweenSelectedCoordinates()
     }
@@ -223,10 +169,10 @@ extension CanvassController: MKMapViewDelegate {
             return nil
         }
 
-        if let _ = annotationManager.annotationFor(guid: MapAnnotationManager.guidFor(annotation: annotation)) {
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MapAnnotationManager.guidFor(annotation: annotation))
+        if let _ = routeManager.locationFor(guid: RouteManager.guidFor(annotation: annotation)) {
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: RouteManager.guidFor(annotation: annotation))
             if annotationView == nil {
-                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: MapAnnotationManager.guidFor(annotation: annotation))
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: RouteManager.guidFor(annotation: annotation))
                 annotationView?.canShowCallout = true
                 annotationView?.image = UIImage(named: "MapPin")
             } else {
@@ -269,43 +215,6 @@ extension CanvassController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         map.camera.heading = newHeading.magneticHeading
         map.setCamera(map.camera, animated: true)
-    }
-
-}
-
-// MARK: - MapAnnotationManager
-
-class MapAnnotationManager {
-
-    // MARK: - Properties
-
-    private var annotations = [String : MKAnnotation]()
-    var annotationCount: Int {
-        return annotations.count
-    }
-
-    // MARK: - Helpers
-
-    func add(annotation: MKAnnotation) {
-        let guid = MapAnnotationManager.guidFor(annotation: annotation)
-        annotations[guid] = annotation
-    }
-
-    func remove(annotation: MKAnnotation) {
-        let guid = MapAnnotationManager.guidFor(annotation: annotation)
-        annotations.removeValue(forKey: guid)
-    }
-
-    func removeAll() {
-        annotations.removeAll()
-    }
-
-    func annotationFor(guid: String) -> MKAnnotation? {
-        return annotations[guid]
-    }
-
-    class func guidFor(annotation: MKAnnotation) -> String {
-        return "\(annotation.coordinate.latitude),\(annotation.coordinate.longitude)"
     }
 
 }
