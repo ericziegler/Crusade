@@ -37,6 +37,7 @@
 		788B5E3B23B32CDF00CABDEF /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3A23B32CDF00CABDEF /* AlertView.swift */; };
 		788B5E3D23B32D0B00CABDEF /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E3C23B32D0B00CABDEF /* AlertView.xib */; };
 		788B5E3F23B32E2300CABDEF /* AddAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3E23B32E2300CABDEF /* AddAddressController.swift */; };
+		788B5E4123B3A2C700CABDEF /* DebugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E4023B3A2C700CABDEF /* DebugData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		788B5E3A23B32CDF00CABDEF /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		788B5E3C23B32D0B00CABDEF /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		788B5E3E23B32E2300CABDEF /* AddAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressController.swift; sourceTree = "<group>"; };
+		788B5E4023B3A2C700CABDEF /* DebugData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				788B5E2E23AFA47200CABDEF /* MenuManager.swift */,
 				788B5E3223B1ABB600CABDEF /* RouteManager.swift */,
 				788B5E3423B1AC2000CABDEF /* Location.swift */,
+				788B5E4023B3A2C700CABDEF /* DebugData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */,
 				788B5E3B23B32CDF00CABDEF /* AlertView.swift in Sources */,
 				788B5E3F23B32E2300CABDEF /* AddAddressController.swift in Sources */,
+				788B5E4123B3A2C700CABDEF /* DebugData.swift in Sources */,
 				788B5E3523B1AC2000CABDEF /* Location.swift in Sources */,
 				788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */,
 				7820B51723AE7433003B0DAA /* MainController.swift in Sources */,
@@ -455,7 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = MJA8334VZT;
 				INFOPLIST_FILE = Crusade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = MJA8334VZT;
 				INFOPLIST_FILE = Crusade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

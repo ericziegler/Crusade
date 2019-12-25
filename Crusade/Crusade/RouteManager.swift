@@ -37,6 +37,9 @@ class RouteManager {
     var allValues: [Location] {
         return Array(locations.values)
     }
+    var locationsSortedByAddress: [Location] {
+        return Array(locations.values).sorted(by: { $0.formatedName < $1.formatedName })
+    }
 
     // MARK: - Init
 

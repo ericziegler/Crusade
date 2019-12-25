@@ -100,15 +100,13 @@ class AddressListController: BaseViewController {
 extension AddressListController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return routeManager.locationCount
+        return routeManager.locationsSortedByAddress.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddressCellId, for: indexPath) as! AddressCell
-        let guid = routeManager.allKeys[indexPath.row]
-        if let location = routeManager.locationFor(guid: guid) {
-            cell.layoutFor(location: location)
-        }
+        let location = routeManager.locationsSortedByAddress[indexPath.row]
+        cell.layoutFor(location: location)
         return cell
     }
 
@@ -118,13 +116,11 @@ extension AddressListController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let guid = routeManager.allKeys[indexPath.row]
-            if let location = routeManager.locationFor(guid: guid) {
-                routeManager.remove(location: location)
-                routeManager.saveRoute()
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                noDataView.isHidden = (routeManager.locationCount == 0) ? false : true
-            }
+            let location = routeManager.locationsSortedByAddress[indexPath.row]
+            routeManager.remove(location: location)
+            routeManager.saveRoute()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            noDataView.isHidden = (routeManager.locationCount == 0) ? false : true
         }
     }
 
