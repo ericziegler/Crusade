@@ -71,7 +71,8 @@ class CanvassController: UIViewController {
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.startUpdatingLocation()
-        locationManager.startUpdatingHeading()
+        // TODO: Implement handling user location header
+//        locationManager.startUpdatingHeading()
     }
 
     private func initMap() {
@@ -213,7 +214,7 @@ extension CanvassController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         if overlay is MKPolyline {
-            renderer.strokeColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.6)
+            renderer.strokeColor = UIColor(hex: 0xf2192e, alpha: 0.75)
             renderer.lineWidth = 5
         }
         return renderer
@@ -266,9 +267,10 @@ extension CanvassController: CLLocationManagerDelegate {
         }
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        map.camera.heading = newHeading.magneticHeading
-        map.setCamera(map.camera, animated: true)
-    }
+    // TODO: Implement handling user location header
+//    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+//        map.camera.heading = newHeading.magneticHeading
+//        map.setCamera(map.camera, animated: true)
+//    }
 
 }
