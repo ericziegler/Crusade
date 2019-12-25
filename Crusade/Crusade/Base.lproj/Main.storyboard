@@ -465,7 +465,7 @@
                                     <constraint firstAttribute="height" constant="60" id="ZzU-Et-hzx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="II7-t6-XHp" id="PW9-FG-Qlw"/>
                                 </connections>

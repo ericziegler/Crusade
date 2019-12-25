@@ -117,7 +117,11 @@ class AddAddressListController: BaseViewController {
 extension AddAddressListController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if textField == numberField {
+            streetField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
         return true
     }
 
