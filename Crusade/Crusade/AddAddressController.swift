@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 // MARK: - Constants
 
@@ -64,6 +65,44 @@ class AddAddressListController: BaseViewController {
             loadingView.isHidden = false
             loadingIndicator.startAnimating()
             view.endEditing(true)
+            findCoordinates()
+        }
+    }
+
+    // MARK: - Geocoding
+
+    private func findCoordinates() {
+        let geoCoder = CLGeocoder()
+        let address = "\(numberField.text!) \(streetField.text!)"
+        geoCoder.geocodeAddressString(address) { (placemarks, error) in
+            DispatchQueue.main.async {
+                self.loadingView.isHidden = true
+                self.loadingIndicator.stopAnimating()
+            }
+            guard
+                let placemarks = placemarks,
+                let result = placemarks.first?.location
+            else {
+                DispatchQueue.main.async {
+                    let alert = AlertView.createAlertFor(parentController: self, title: "Address Not Found", message: "Please verify the street name and number are correct.")
+                    alert.showAlert()
+                }
+                return
+            }
+            
+            // location found
+            let location = Location(streetNumber: self.numberField.text!, streetName: self.streetField.text!, coordinate: result.coordinate)
+            self.routeManager.add(location: location)
+            self.routeManager.saveRoute()
+
+            DispatchQueue.main.async {
+                self.numberField.text = nil
+                self.numberField.becomeFirstResponder()
+                self.statusLabel.alpha = 1
+                UIView.animate(withDuration: 0.05, delay: 2.5, options: .curveEaseInOut, animations: {
+                    self.statusLabel.alpha = 0
+                }, completion: nil)
+            }
         }
     }
 

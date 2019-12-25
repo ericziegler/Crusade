@@ -195,6 +195,13 @@
                                             <action selector="curLocationTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="iyB-6E-VL2"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tV-Is-mGc" userLabel="CurLoc Button">
+                                        <rect key="frame" x="365" y="108" width="41" height="44"/>
+                                        <state key="normal" image="AddressList"/>
+                                        <connections>
+                                            <action selector="addressListTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="P8r-Rf-K4S"/>
+                                        </connections>
+                                    </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mr-UG-Gkl" userLabel="Info View">
                                         <rect key="frame" x="0.0" y="806" width="414" height="90"/>
                                         <subviews>
@@ -235,13 +242,26 @@
                                             <constraint firstAttribute="trailing" secondItem="MpC-ir-Y6B" secondAttribute="trailing" constant="12" id="uBu-fr-470"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tV-Is-mGc" userLabel="CurLoc Button">
-                                        <rect key="frame" x="365" y="108" width="41" height="44"/>
-                                        <state key="normal" image="AddressList"/>
-                                        <connections>
-                                            <action selector="addressListTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="P8r-Rf-K4S"/>
-                                        </connections>
-                                    </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lzn-mT-7JE">
+                                        <rect key="frame" x="117" y="110" width="240" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to view/add addresses →" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogx-dj-Wfb" customClass="RegularLabel" customModule="Crusade" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="FIi-en-G2d"/>
+                                            <constraint firstItem="Ogx-dj-Wfb" firstAttribute="top" secondItem="Lzn-mT-7JE" secondAttribute="top" id="Ps8-zV-wPj"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ogx-dj-Wfb" secondAttribute="bottom" id="Sat-Im-gVe"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ogx-dj-Wfb" secondAttribute="trailing" id="TqV-Fr-dz9"/>
+                                            <constraint firstItem="Ogx-dj-Wfb" firstAttribute="leading" secondItem="Lzn-mT-7JE" secondAttribute="leading" id="mOt-QZ-eB0"/>
+                                            <constraint firstAttribute="height" constant="40" id="mZY-RF-Gss"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -250,10 +270,12 @@
                                     <constraint firstItem="8mr-UG-Gkl" firstAttribute="leading" secondItem="8fG-dk-rwf" secondAttribute="leading" id="7tY-ih-fTA"/>
                                     <constraint firstItem="XDd-GO-6kL" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" id="BaB-iY-GsD"/>
                                     <constraint firstItem="8mr-UG-Gkl" firstAttribute="top" secondItem="XDd-GO-6kL" secondAttribute="bottom" id="D0N-2V-ODp"/>
+                                    <constraint firstItem="4tV-Is-mGc" firstAttribute="leading" secondItem="Lzn-mT-7JE" secondAttribute="trailing" constant="8" id="WVL-2v-SQZ"/>
                                     <constraint firstAttribute="trailing" secondItem="XDd-GO-6kL" secondAttribute="trailing" id="bMd-ZK-aHk"/>
                                     <constraint firstItem="4tV-Is-mGc" firstAttribute="top" secondItem="3EZ-We-UPq" secondAttribute="bottom" constant="12" id="ddl-i7-j0c"/>
                                     <constraint firstItem="3EZ-We-UPq" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" constant="52" id="dik-FL-UYL"/>
                                     <constraint firstAttribute="bottom" secondItem="8mr-UG-Gkl" secondAttribute="bottom" id="lEt-ta-bJk"/>
+                                    <constraint firstItem="Lzn-mT-7JE" firstAttribute="centerY" secondItem="4tV-Is-mGc" secondAttribute="centerY" id="w6A-gK-VtT"/>
                                     <constraint firstAttribute="trailing" secondItem="8mr-UG-Gkl" secondAttribute="trailing" id="y9o-yk-kbv"/>
                                     <constraint firstAttribute="trailing" secondItem="4tV-Is-mGc" secondAttribute="trailing" constant="8" id="zAE-JH-63G"/>
                                 </constraints>
@@ -272,6 +294,7 @@
                         <outlet property="checkButton" destination="MpC-ir-Y6B" id="dVk-Vn-IO9"/>
                         <outlet property="infoHeightConstraint" destination="NXO-Lh-frg" id="3Pf-eK-dgf"/>
                         <outlet property="infoLabel" destination="B3C-zG-kAY" id="dtz-nH-vxa"/>
+                        <outlet property="instructionsView" destination="Lzn-mT-7JE" id="O5m-Y6-8I8"/>
                         <outlet property="map" destination="XDd-GO-6kL" id="Wtf-Xj-AOn"/>
                     </connections>
                 </viewController>
@@ -354,18 +377,43 @@
                                     <outlet property="delegate" destination="Xm5-qb-pHN" id="q7s-MT-vYz"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9MU-vW-Mp9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No addresses yet! Tap the &quot;+&quot; in the top right to begin." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw6-SE-cAV" userLabel="No Data Label">
+                                        <rect key="frame" x="31" y="336" width="352" height="146"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="146" id="Ccq-gN-ID0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="28"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Jw6-SE-cAV" firstAttribute="centerY" secondItem="9MU-vW-Mp9" secondAttribute="centerY" id="RGO-AS-Lgw"/>
+                                    <constraint firstItem="Jw6-SE-cAV" firstAttribute="leading" secondItem="9MU-vW-Mp9" secondAttribute="leading" constant="31" id="WJ6-aW-9Ea"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jw6-SE-cAV" secondAttribute="trailing" constant="31" id="neo-x6-RXr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.93725490196078431" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zn8-7P-oGb" firstAttribute="trailing" secondItem="PnO-yw-S2D" secondAttribute="trailing" id="9bJ-ct-HOT"/>
+                            <constraint firstItem="zn8-7P-oGb" firstAttribute="trailing" secondItem="9MU-vW-Mp9" secondAttribute="trailing" id="EMI-dy-e1I"/>
                             <constraint firstItem="PnO-yw-S2D" firstAttribute="leading" secondItem="zn8-7P-oGb" secondAttribute="leading" id="Ocv-es-96y"/>
                             <constraint firstItem="PnO-yw-S2D" firstAttribute="top" secondItem="zn8-7P-oGb" secondAttribute="top" id="Tau-wF-rbq"/>
+                            <constraint firstItem="9MU-vW-Mp9" firstAttribute="leading" secondItem="zn8-7P-oGb" secondAttribute="leading" id="X6k-Hb-Ba0"/>
                             <constraint firstItem="zn8-7P-oGb" firstAttribute="bottom" secondItem="PnO-yw-S2D" secondAttribute="bottom" id="iv9-RS-CjV"/>
+                            <constraint firstItem="zn8-7P-oGb" firstAttribute="bottom" secondItem="9MU-vW-Mp9" secondAttribute="bottom" id="ktZ-Vh-Z2m"/>
+                            <constraint firstItem="9MU-vW-Mp9" firstAttribute="top" secondItem="zn8-7P-oGb" secondAttribute="top" id="nPf-a4-tye"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zn8-7P-oGb"/>
                     </view>
                     <connections>
                         <outlet property="addressTable" destination="PnO-yw-S2D" id="nvw-s9-8vp"/>
+                        <outlet property="noDataView" destination="9MU-vW-Mp9" id="ZcN-4t-VTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fb-Yc-4ds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -380,9 +428,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address added!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDI-N3-Mgg" customClass="BoldLabel" customModule="Crusade" customModuleProvider="target">
-                                <rect key="frame" x="263.5" y="44" width="130.5" height="27"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address added!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDI-N3-Mgg" customClass="BoldLabel" customModule="Crusade" customModuleProvider="target">
+                                <rect key="frame" x="20" y="52" width="374" height="30"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="22"/>
                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -472,7 +520,8 @@
                             <constraint firstItem="GJ7-AS-5So" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" constant="20" id="DhE-2d-0xP"/>
                             <constraint firstItem="5Bp-zp-89T" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" constant="20" id="WKl-HH-ac5"/>
                             <constraint firstItem="Sxs-Kt-gI3" firstAttribute="trailing" secondItem="5Bp-zp-89T" secondAttribute="trailing" constant="20" id="XhP-pH-xZ5"/>
-                            <constraint firstItem="wDI-N3-Mgg" firstAttribute="top" secondItem="Sxs-Kt-gI3" secondAttribute="top" id="aXT-oR-ELM"/>
+                            <constraint firstItem="wDI-N3-Mgg" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" constant="20" id="Z8O-bu-lkn"/>
+                            <constraint firstItem="wDI-N3-Mgg" firstAttribute="top" secondItem="Sxs-Kt-gI3" secondAttribute="top" constant="8" id="aXT-oR-ELM"/>
                             <constraint firstItem="uid-R5-de4" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" constant="20" id="aw3-Ne-XcL"/>
                             <constraint firstItem="5Bp-zp-89T" firstAttribute="top" secondItem="iKi-gC-SNT" secondAttribute="bottom" constant="8" id="c1g-eo-FBy"/>
                             <constraint firstItem="RP8-TC-aUu" firstAttribute="top" secondItem="5Bp-zp-89T" secondAttribute="bottom" constant="23" id="ikf-R7-NNZ"/>

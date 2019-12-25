@@ -17,6 +17,7 @@ class AddressListController: BaseViewController {
     // MARK: - Properties
 
     @IBOutlet var addressTable: UITableView!
+    @IBOutlet var noDataView: UIView!
     var routeManager = RouteManager.shared
 
     // MARK: - Init
@@ -35,6 +36,7 @@ class AddressListController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addressTable.reloadData()
+        noDataView.isHidden = (routeManager.locationCount == 0) ? false : true
     }
 
     private func setupNavBar() {
@@ -103,6 +105,7 @@ extension AddressListController: UITableViewDataSource, UITableViewDelegate {
                 routeManager.remove(location: location)
                 routeManager.saveRoute()
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                noDataView.isHidden = (routeManager.locationCount == 0) ? false : true
             }
         }
     }

@@ -25,6 +25,7 @@ class CanvassController: UIViewController {
     // MARK: - Properties
 
     @IBOutlet var map: MKMapView!
+    @IBOutlet var instructionsView: UIView!
     @IBOutlet var infoHeightConstraint: NSLayoutConstraint!
     @IBOutlet var infoLabel: BoldLabel!
     @IBOutlet var checkButton: UIButton!
@@ -34,6 +35,7 @@ class CanvassController: UIViewController {
     let locationManager = CLLocationManager()
     let routeManager = RouteManager.shared
     var currentLocation: CLLocation?
+    var selectedLocation: Location?
     var selectedCoord: CLLocationCoordinate2D?
 
     // MARK: - Init
@@ -48,7 +50,18 @@ class CanvassController: UIViewController {
         super.viewDidLoad()
         initLocationManager()
         initMap()
-        displaySelectedLocation(nil)
+        instructionsView.layer.cornerRadius = 12
+        displaySelectedLocation()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateAnnotations()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        instructionsView.isHidden = (routeManager.locationCount == 0) ? false : true
     }
 
     private func initLocationManager() {
@@ -72,10 +85,18 @@ class CanvassController: UIViewController {
     }
 
     @IBAction func checkTapped(_ sender: AnyObject) {
-
+        if let selection = selectedLocation {
+            selection.hasKnocked = !selection.hasKnocked
+            routeManager.saveRoute()
+            checkButton.alpha = (selection.hasKnocked == true) ? 1 : CheckmarkAlpha
+        }
     }
 
     @IBAction func addressListTapped(_ sender: AnyObject) {
+        displayAddressList()
+    }
+
+    private func displayAddressList() {
         let controller = AddressListController.createController()
         let navController = BaseNavigationController(rootViewController: controller)
         navController.modalPresentationStyle = .fullScreen
@@ -85,6 +106,8 @@ class CanvassController: UIViewController {
     // MARK: - Map Drawing
 
     func updateAnnotations() {
+        selectedLocation = nil
+        displaySelectedLocation()
         map.removeOverlays(map.overlays)
         map.removeAnnotations(map.annotations)
         for curKey in routeManager.allKeys {
@@ -159,9 +182,9 @@ class CanvassController: UIViewController {
         map.setRegion(region, animated: animated)
     }
 
-    private func displaySelectedLocation(_ location: Location?) {
+    private func displaySelectedLocation() {
         var height: CGFloat = 0
-        if let loc = location {
+        if let loc = selectedLocation {
             height = InfoHeightConstant
             infoLabel.text = "\(loc.streetNumber) \(loc.streetName)"
             checkButton.alpha = (loc.hasKnocked == true) ? 1 : CheckmarkAlpha
@@ -181,7 +204,8 @@ extension CanvassController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation, let selectedLocation = routeManager.locationFor(guid: RouteManager.guidFor(annotation: annotation)), !(annotation is MKUserLocation) {
             selectedCoord = annotation.coordinate
-            displaySelectedLocation(selectedLocation)
+            self.selectedLocation = selectedLocation
+            displaySelectedLocation()
             drawRouteBetweenSelectedCoordinates()
         }
     }

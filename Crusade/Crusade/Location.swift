@@ -13,7 +13,7 @@ import MapKit
 
 
 let LatitudeCacheKey = "LatitudeCacheKey"
-let LongitudeCacheKey = "LatitudeCacheKey"
+let LongitudeCacheKey = "LongitudeCacheKey"
 let StreetNumberCacheKey = "StreetNumberCacheKey"
 let StreetNameCacheKey = "StreetNameCacheKey"
 let HasKnockedCacheKey = "HasKnockedCacheKey"
@@ -39,6 +39,14 @@ class Location: NSObject, NSCoding {
     var hasKnocked = false
 
     // MARK: - Init
+
+    convenience init(streetNumber: String, streetName: String, coordinate: CLLocationCoordinate2D) {
+        self.init()
+        self.streetNumber = streetNumber
+        self.streetName = streetName
+        self.latitudeString = "\(coordinate.latitude)"
+        self.longitudeString = "\(coordinate.longitude)"
+    }
 
     override init() {
         super.init()
