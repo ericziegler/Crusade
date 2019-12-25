@@ -37,14 +37,18 @@ class AddAddressListController: BaseViewController {
         super.viewDidLoad()
         setupNavBar()
         setupButtons()
+        numberField.becomeFirstResponder()
     }
 
     private func setupNavBar() {
         self.title = "Add Addresses"
         self.navigationController?.navigationBar.titleTextAttributes = navTitleTextAttributes()
 
-        let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeTapped(_:)))
-        self.navigationItem.leftBarButtonItem = closeButton
+        var closeItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeTapped(_:)))
+        if #available(iOS 13, *) {
+            closeItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeTapped(_:)))
+        }
+        self.navigationItem.leftBarButtonItem = closeItem
     }
 
     private func setupButtons() {

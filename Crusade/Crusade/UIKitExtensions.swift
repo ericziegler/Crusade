@@ -7,7 +7,7 @@ import UIKit
 // MARK: Global Properties
 
 func applyApplicationAppearanceProperties() {
-    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.applicationFontOfSize(17)], for: .normal)
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font : UIFont.applicationFontOfSize(20)], for: .normal)
     UINavigationBar.appearance().tintColor = UIColor.appWhite
     UINavigationBar.appearance().barTintColor = UIColor.appLightBlue
 }

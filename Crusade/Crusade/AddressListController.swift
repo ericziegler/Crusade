@@ -43,23 +43,21 @@ class AddressListController: BaseViewController {
         self.title = "Addresses"
         self.navigationController?.navigationBar.titleTextAttributes = navTitleTextAttributes()
 
-        if let closeImage = UIImage(named: "Close")?.maskedImageWithColor(UIColor.appWhite) {
-            let closeButton = UIButton(type: .custom)
-            closeButton.addTarget(self, action: #selector(closeTapped(_:)), for: .touchUpInside)
-            closeButton.setImage(closeImage, for: .normal)
-            closeButton.frame = CGRect(x: 0, y: 0, width: closeImage.size.width, height: closeImage.size.height)
-            let closeItem = UIBarButtonItem(customView: closeButton)
-            self.navigationItem.leftBarButtonItems = [closeItem]
+        var closeItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(closeTapped(_:)))
+        if #available(iOS 13.0, *) {
+            closeItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(closeTapped(_:)))
         }
+        self.navigationItem.leftBarButtonItem = closeItem
 
-        if let addImage = UIImage(named: "Add")?.maskedImageWithColor(UIColor.appWhite) {
-            let addButton = UIButton(type: .custom)
-            addButton.addTarget(self, action: #selector(addTapped(_:)), for: .touchUpInside)
-            addButton.setImage(addImage, for: .normal)
-            addButton.frame = CGRect(x: 0, y: 0, width: addImage.size.width, height: addImage.size.height)
-            let addItem = UIBarButtonItem(customView: addButton)
-            self.navigationItem.rightBarButtonItems = [addItem]
+        var addItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped(_:)))
+        if #available(iOS 13.0, *) {
+            addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped(_:)))
         }
+        var removeAllItem = UIBarButtonItem(title: "Clear All", style: .plain, target: self, action: #selector(removeAllTapped(_:)))
+        if #available(iOS 13.0, *) {
+            removeAllItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(removeAllTapped(_:)))
+        }
+        self.navigationItem.rightBarButtonItems = [addItem, removeAllItem]
     }
 
     // MARK: - Actions
@@ -73,6 +71,26 @@ class AddressListController: BaseViewController {
         let navController = BaseNavigationController(rootViewController: controller)
         navController.modalPresentationStyle = .fullScreen
         self.present(navController, animated: true, completion: nil)
+    }
+
+    @IBAction func removeAllTapped(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        // custom title
+        let titleString = "Are you sure you would like to remove all addresses?"
+        alert.setValue(NSAttributedString(string: titleString, attributes: [NSAttributedString.Key.font : UIFont.applicationBoldFontOfSize(20), .foregroundColor : UIColor.appBlack]), forKey: "attributedTitle")
+        // cancel action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        // destrictove action
+        let removeAllAction = UIAlertAction(title: "Remove All", style: .destructive) { (action) in
+            self.routeManager.removeAll()
+            self.routeManager.saveRoute()
+            self.addressTable.reloadData()
+            self.noDataView.isHidden = (self.routeManager.locationCount == 0) ? false : true
+        }
+        alert.addAction(removeAllAction)
+
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
