@@ -76,7 +76,10 @@ class CanvassController: UIViewController {
     }
 
     @IBAction func addressListTapped(_ sender: AnyObject) {
-        print("ADDRESS LIST TAPPED")
+        let controller = AddressListController.createController()
+        let navController = BaseNavigationController(rootViewController: controller)
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
     }
 
     // MARK: - Map Drawing

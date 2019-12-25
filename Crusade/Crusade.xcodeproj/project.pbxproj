@@ -32,6 +32,8 @@
 		788B5E2F23AFA47200CABDEF /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E2E23AFA47200CABDEF /* MenuManager.swift */; };
 		788B5E3323B1ABB600CABDEF /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3223B1ABB600CABDEF /* RouteManager.swift */; };
 		788B5E3523B1AC2000CABDEF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3423B1AC2000CABDEF /* Location.swift */; };
+		788B5E3723B323D200CABDEF /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3623B323D200CABDEF /* AddressCell.swift */; };
+		788B5E3923B3249200CABDEF /* AddressListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3823B3249200CABDEF /* AddressListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		788B5E2E23AFA47200CABDEF /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		788B5E3223B1ABB600CABDEF /* RouteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		788B5E3423B1AC2000CABDEF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		788B5E3623B323D200CABDEF /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		788B5E3823B3249200CABDEF /* AddressListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			children = (
 				788B5E1F23AF836D00CABDEF /* MenuHeaderCell.swift */,
 				788B5E2123AF919A00CABDEF /* MenuCell.swift */,
+				788B5E3623B323D200CABDEF /* AddressCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				788B5E1923AF725E00CABDEF /* MenuController.swift */,
 				788B5E1D23AF796300CABDEF /* VoteController.swift */,
 				788B5E1B23AF792E00CABDEF /* CanvassController.swift */,
+				788B5E3823B3249200CABDEF /* AddressListController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				7820B51723AE7433003B0DAA /* MainController.swift in Sources */,
 				788B5E3323B1ABB600CABDEF /* RouteManager.swift in Sources */,
 				7820B53123AE74E0003B0DAA /* BaseViewController.swift in Sources */,
+				788B5E3723B323D200CABDEF /* AddressCell.swift in Sources */,
 				7820B53523AE7580003B0DAA /* UIKitExtensions.swift in Sources */,
 				7820B53923AE77DA003B0DAA /* MapKitExtensions.swift in Sources */,
 				7820B53323AE74F0003B0DAA /* BaseTableViewController.swift in Sources */,
@@ -289,6 +296,7 @@
 				788B5E1E23AF796300CABDEF /* VoteController.swift in Sources */,
 				7820B52F23AE74D5003B0DAA /* BaseNavigationController.swift in Sources */,
 				788B5E1823AF724D00CABDEF /* CenterController.swift in Sources */,
+				788B5E3923B3249200CABDEF /* AddressListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
