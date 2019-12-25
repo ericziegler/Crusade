@@ -262,6 +262,26 @@
                                             <constraint firstAttribute="height" constant="40" id="mZY-RF-Gss"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewj-xw-nzc">
+                                        <rect key="frame" x="8" y="52" width="200" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doors Knocked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="New-UC-3oi" customClass="RegularLabel" customModule="Crusade" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="34"/>
+                                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="HPO-kN-bcY"/>
+                                            <constraint firstItem="New-UC-3oi" firstAttribute="leading" secondItem="ewj-xw-nzc" secondAttribute="leading" id="IcG-MJ-3Oe"/>
+                                            <constraint firstAttribute="width" constant="200" id="fDC-UJ-W48"/>
+                                            <constraint firstAttribute="trailing" secondItem="New-UC-3oi" secondAttribute="trailing" id="kan-Z7-dZJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="New-UC-3oi" secondAttribute="bottom" id="pqS-vq-ZKK"/>
+                                            <constraint firstItem="New-UC-3oi" firstAttribute="top" secondItem="ewj-xw-nzc" secondAttribute="top" id="rwB-SO-SzH"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -270,11 +290,13 @@
                                     <constraint firstItem="8mr-UG-Gkl" firstAttribute="leading" secondItem="8fG-dk-rwf" secondAttribute="leading" id="7tY-ih-fTA"/>
                                     <constraint firstItem="XDd-GO-6kL" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" id="BaB-iY-GsD"/>
                                     <constraint firstItem="8mr-UG-Gkl" firstAttribute="top" secondItem="XDd-GO-6kL" secondAttribute="bottom" id="D0N-2V-ODp"/>
+                                    <constraint firstItem="ewj-xw-nzc" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" constant="52" id="NXl-L6-qye"/>
                                     <constraint firstItem="4tV-Is-mGc" firstAttribute="leading" secondItem="Lzn-mT-7JE" secondAttribute="trailing" constant="8" id="WVL-2v-SQZ"/>
                                     <constraint firstAttribute="trailing" secondItem="XDd-GO-6kL" secondAttribute="trailing" id="bMd-ZK-aHk"/>
                                     <constraint firstItem="4tV-Is-mGc" firstAttribute="top" secondItem="3EZ-We-UPq" secondAttribute="bottom" constant="12" id="ddl-i7-j0c"/>
                                     <constraint firstItem="3EZ-We-UPq" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" constant="52" id="dik-FL-UYL"/>
                                     <constraint firstAttribute="bottom" secondItem="8mr-UG-Gkl" secondAttribute="bottom" id="lEt-ta-bJk"/>
+                                    <constraint firstItem="ewj-xw-nzc" firstAttribute="leading" secondItem="8fG-dk-rwf" secondAttribute="leading" constant="8" id="vMm-Nr-IT1"/>
                                     <constraint firstItem="Lzn-mT-7JE" firstAttribute="centerY" secondItem="4tV-Is-mGc" secondAttribute="centerY" id="w6A-gK-VtT"/>
                                     <constraint firstAttribute="trailing" secondItem="8mr-UG-Gkl" secondAttribute="trailing" id="y9o-yk-kbv"/>
                                     <constraint firstAttribute="trailing" secondItem="4tV-Is-mGc" secondAttribute="trailing" constant="8" id="zAE-JH-63G"/>
@@ -296,6 +318,8 @@
                         <outlet property="infoLabel" destination="B3C-zG-kAY" id="dtz-nH-vxa"/>
                         <outlet property="instructionsView" destination="Lzn-mT-7JE" id="O5m-Y6-8I8"/>
                         <outlet property="map" destination="XDd-GO-6kL" id="Wtf-Xj-AOn"/>
+                        <outlet property="progressLabel" destination="New-UC-3oi" id="vmY-pv-w9F"/>
+                        <outlet property="progressView" destination="ewj-xw-nzc" id="e0v-SY-U88"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gz-Ng-svH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

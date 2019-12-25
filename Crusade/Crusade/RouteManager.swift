@@ -22,6 +22,15 @@ class RouteManager {
     var locationCount: Int {
         return locations.count
     }
+    var knockedCount: Int {
+        var result = 0
+        for curKey in Array(locations.keys) {
+            if locations[curKey]?.hasKnocked == true {
+                result += 1
+            }
+        }
+        return result
+    }
     var allKeys: [String] {
         return Array(locations.keys)
     }

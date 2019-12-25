@@ -26,6 +26,8 @@ class CanvassController: UIViewController {
 
     @IBOutlet var map: MKMapView!
     @IBOutlet var instructionsView: UIView!
+    @IBOutlet var progressView: UIView!
+    @IBOutlet var progressLabel: RegularLabel!
     @IBOutlet var infoHeightConstraint: NSLayoutConstraint!
     @IBOutlet var infoLabel: BoldLabel!
     @IBOutlet var checkButton: UIButton!
@@ -50,7 +52,7 @@ class CanvassController: UIViewController {
         super.viewDidLoad()
         initLocationManager()
         initMap()
-        instructionsView.layer.cornerRadius = 12
+        initOverlayViews()
         displaySelectedLocation()
     }
 
@@ -62,6 +64,7 @@ class CanvassController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         instructionsView.isHidden = (routeManager.locationCount == 0) ? false : true
+        updateProgressLabel()
     }
 
     private func initLocationManager() {
@@ -79,6 +82,12 @@ class CanvassController: UIViewController {
         map.userTrackingMode = MKUserTrackingMode.followWithHeading
     }
 
+    private func initOverlayViews() {
+        let cornerRadius: CGFloat = 12
+        progressView.layer.cornerRadius = cornerRadius
+        instructionsView.layer.cornerRadius = cornerRadius
+    }
+
     // MARK: - Actions
 
     @IBAction func curLocationTapped(_ sender: AnyObject) {
@@ -90,6 +99,7 @@ class CanvassController: UIViewController {
             selection.hasKnocked = !selection.hasKnocked
             routeManager.saveRoute()
             checkButton.alpha = (selection.hasKnocked == true) ? 1 : CheckmarkAlpha
+            updateProgressLabel()
         }
     }
 
@@ -102,6 +112,15 @@ class CanvassController: UIViewController {
         let navController = BaseNavigationController(rootViewController: controller)
         navController.modalPresentationStyle = .fullScreen
         self.present(navController, animated: true, completion: nil)
+    }
+
+    private func updateProgressLabel() {
+        if routeManager.locationCount > 0 {
+            progressView.isHidden = false
+            progressLabel.text = "Doors Knocked: \(routeManager.knockedCount)/\(routeManager.locationCount)"
+        } else {
+            progressView.isHidden = true
+        }
     }
 
     // MARK: - Map Drawing
