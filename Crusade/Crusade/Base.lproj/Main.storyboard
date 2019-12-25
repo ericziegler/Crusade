@@ -262,7 +262,7 @@
                                             <constraint firstAttribute="height" constant="40" id="mZY-RF-Gss"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewj-xw-nzc">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewj-xw-nzc">
                                         <rect key="frame" x="8" y="52" width="200" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doors Knocked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="New-UC-3oi" customClass="RegularLabel" customModule="Crusade" customModuleProvider="target">
