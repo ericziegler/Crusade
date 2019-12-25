@@ -63,6 +63,9 @@ class AddressListController: BaseViewController {
 
     @IBAction func addTapped(_ sender: AnyObject) {
         print("ADD TAPPED")
+        // TODO: EZ - This is an example for AlertView usage. Remove once properly implemented in geocoding
+        let alert = AlertView.createAlertFor(parentController: self, title: "Address Not Found", message: "Please verify the correct street number and name.")
+        alert.showAlert()
     }
 
 }

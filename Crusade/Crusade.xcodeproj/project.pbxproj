@@ -34,6 +34,8 @@
 		788B5E3523B1AC2000CABDEF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3423B1AC2000CABDEF /* Location.swift */; };
 		788B5E3723B323D200CABDEF /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3623B323D200CABDEF /* AddressCell.swift */; };
 		788B5E3923B3249200CABDEF /* AddressListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3823B3249200CABDEF /* AddressListController.swift */; };
+		788B5E3B23B32CDF00CABDEF /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3A23B32CDF00CABDEF /* AlertView.swift */; };
+		788B5E3D23B32D0B00CABDEF /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E3C23B32D0B00CABDEF /* AlertView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		788B5E3423B1AC2000CABDEF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		788B5E3623B323D200CABDEF /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		788B5E3823B3249200CABDEF /* AddressListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListController.swift; sourceTree = "<group>"; };
+		788B5E3A23B32CDF00CABDEF /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		788B5E3C23B32D0B00CABDEF /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				788B5E1F23AF836D00CABDEF /* MenuHeaderCell.swift */,
 				788B5E2123AF919A00CABDEF /* MenuCell.swift */,
 				788B5E3623B323D200CABDEF /* AddressCell.swift */,
+				788B5E3A23B32CDF00CABDEF /* AlertView.swift */,
+				788B5E3C23B32D0B00CABDEF /* AlertView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788B5E3D23B32D0B00CABDEF /* AlertView.xib in Resources */,
 				788B5E2A23AF9CDF00CABDEF /* register.html in Resources */,
 				788B5E2C23AF9CDF00CABDEF /* votereminder.html in Resources */,
 				788B5E2D23AF9CDF00CABDEF /* checkregistration.html in Resources */,
@@ -283,6 +290,7 @@
 				788B5E1A23AF725E00CABDEF /* MenuController.swift in Sources */,
 				788B5E2023AF836D00CABDEF /* MenuHeaderCell.swift in Sources */,
 				7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */,
+				788B5E3B23B32CDF00CABDEF /* AlertView.swift in Sources */,
 				788B5E3523B1AC2000CABDEF /* Location.swift in Sources */,
 				788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */,
 				7820B51723AE7433003B0DAA /* MainController.swift in Sources */,
