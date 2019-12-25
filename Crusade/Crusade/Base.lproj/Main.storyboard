@@ -188,6 +188,13 @@
                                             <outlet property="delegate" destination="Ka3-Lp-FFv" id="65O-hL-Akp"/>
                                         </connections>
                                     </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EZ-We-UPq" userLabel="CurLoc Button">
+                                        <rect key="frame" x="365" y="52" width="41" height="44"/>
+                                        <state key="normal" image="UserLocation"/>
+                                        <connections>
+                                            <action selector="curLocationTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="iyB-6E-VL2"/>
+                                        </connections>
+                                    </button>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mr-UG-Gkl" userLabel="Info View">
                                         <rect key="frame" x="0.0" y="806" width="414" height="90"/>
                                         <subviews>
@@ -211,7 +218,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuZ-R8-nli" userLabel="Info Button">
                                                 <rect key="frame" x="8" y="20" width="331" height="30"/>
                                                 <connections>
-                                                    <action selector="infoTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="b8t-xi-Jyf"/>
+                                                    <action selector="addressListTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="5fF-Fv-Yrj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -228,11 +235,11 @@
                                             <constraint firstAttribute="trailing" secondItem="MpC-ir-Y6B" secondAttribute="trailing" constant="12" id="uBu-fr-470"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EZ-We-UPq" userLabel="CurLoc Button">
-                                        <rect key="frame" x="365" y="52" width="41" height="44"/>
-                                        <state key="normal" image="UserLocation"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tV-Is-mGc" userLabel="CurLoc Button">
+                                        <rect key="frame" x="365" y="108" width="41" height="44"/>
+                                        <state key="normal" image="AddressList"/>
                                         <connections>
-                                            <action selector="curLocationTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="iyB-6E-VL2"/>
+                                            <action selector="addressListTapped:" destination="Ka3-Lp-FFv" eventType="touchUpInside" id="P8r-Rf-K4S"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -244,9 +251,11 @@
                                     <constraint firstItem="XDd-GO-6kL" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" id="BaB-iY-GsD"/>
                                     <constraint firstItem="8mr-UG-Gkl" firstAttribute="top" secondItem="XDd-GO-6kL" secondAttribute="bottom" id="D0N-2V-ODp"/>
                                     <constraint firstAttribute="trailing" secondItem="XDd-GO-6kL" secondAttribute="trailing" id="bMd-ZK-aHk"/>
+                                    <constraint firstItem="4tV-Is-mGc" firstAttribute="top" secondItem="3EZ-We-UPq" secondAttribute="bottom" constant="12" id="ddl-i7-j0c"/>
                                     <constraint firstItem="3EZ-We-UPq" firstAttribute="top" secondItem="8fG-dk-rwf" secondAttribute="top" constant="52" id="dik-FL-UYL"/>
                                     <constraint firstAttribute="bottom" secondItem="8mr-UG-Gkl" secondAttribute="bottom" id="lEt-ta-bJk"/>
                                     <constraint firstAttribute="trailing" secondItem="8mr-UG-Gkl" secondAttribute="trailing" id="y9o-yk-kbv"/>
+                                    <constraint firstAttribute="trailing" secondItem="4tV-Is-mGc" secondAttribute="trailing" constant="8" id="zAE-JH-63G"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -306,7 +315,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Checkmark" width="44" height="33"/>
+        <image name="AddressList" width="41" height="44"/>
+        <image name="Checkmark" width="40" height="30"/>
         <image name="MenuHeader" width="83" height="90"/>
         <image name="UserLocation" width="41" height="44"/>
     </resources>

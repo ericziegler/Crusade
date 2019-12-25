@@ -16,6 +16,7 @@ let LatitudeCacheKey = "LatitudeCacheKey"
 let LongitudeCacheKey = "LatitudeCacheKey"
 let StreetNumberCacheKey = "StreetNumberCacheKey"
 let StreetNameCacheKey = "StreetNameCacheKey"
+let HasKnockedCacheKey = "HasKnockedCacheKey"
 
 class Location: NSObject, NSCoding {
 
@@ -35,6 +36,7 @@ class Location: NSObject, NSCoding {
     }
     var streetNumber = ""
     var streetName = ""
+    var hasKnocked = false
 
     // MARK: - Init
 
@@ -57,6 +59,7 @@ class Location: NSObject, NSCoding {
         if let cachedStreet = decoder.decodeObject(forKey: StreetNameCacheKey) as? String {
             streetName = cachedStreet
         }
+        hasKnocked = decoder.decodeBool(forKey: HasKnockedCacheKey)
     }
 
     public func encode(with coder: NSCoder) {
@@ -64,6 +67,7 @@ class Location: NSObject, NSCoding {
         coder.encode(longitudeString, forKey: LongitudeCacheKey)
         coder.encode(streetNumber, forKey: StreetNumberCacheKey)
         coder.encode(streetName, forKey: StreetNameCacheKey)
+        coder.encode(hasKnocked, forKey: HasKnockedCacheKey)
     }
 
 }

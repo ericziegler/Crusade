@@ -22,6 +22,12 @@ class RouteManager {
     var locationCount: Int {
         return locations.count
     }
+    var allKeys: [String] {
+        return Array(locations.keys)
+    }
+    var allValues: [Location] {
+        return Array(locations.values)
+    }
 
     // MARK: - Init
 

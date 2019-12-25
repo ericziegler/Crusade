@@ -17,8 +17,8 @@ let MapPinStandardIdentifier = "MapPinStandardIdentifier"
 let MapDirectionIdentifier = "MapDirectionIdentifier"
 let MapSourceIdentifier = "MapSourceIdentifier"
 let MapDestinationIdentifier = "MapDestinationIdentifier"
-let checkmarkAlpha: CGFloat = 0.3
-let infoHeightConstant: CGFloat = 90
+let CheckmarkAlpha: CGFloat = 0.3
+let InfoHeightConstant: CGFloat = 90
 
 class CanvassController: UIViewController {
 
@@ -48,6 +48,7 @@ class CanvassController: UIViewController {
         super.viewDidLoad()
         initLocationManager()
         initMap()
+        displaySelectedLocation(nil)
     }
 
     private func initLocationManager() {
@@ -74,11 +75,21 @@ class CanvassController: UIViewController {
 
     }
 
-    @IBAction func infoTapped(_ sender: AnyObject) {
-
+    @IBAction func addressListTapped(_ sender: AnyObject) {
+        print("ADDRESS LIST TAPPED")
     }
 
     // MARK: - Map Drawing
+
+    func updateAnnotations() {
+        map.removeOverlays(map.overlays)
+        map.removeAnnotations(map.annotations)
+        for curKey in routeManager.allKeys {
+            if let location = routeManager.locationFor(guid: curKey) {
+                map.addAnnotation(location.annotation)
+            }
+        }
+    }
 
     private func updateDirectionAnnotations(source: CLLocationCoordinate2D?, destination: CLLocationCoordinate2D?) {
         var annotation = MKPointAnnotation()
@@ -111,15 +122,6 @@ class CanvassController: UIViewController {
         }
     }
 
-    private func updateDirectionInstructions() {
-        if let directions = directions {
-            for curDirection in directions {
-                // TODO: Handle displaying directions as step-by-step text
-                print(curDirection.instructions)
-            }
-        }
-    }
-
     private func drawRouteBetweenSelectedCoordinates() {
         if let selection = selectedCoord, let userLocation = currentLocation {
             let request = MKDirections.Request()
@@ -142,7 +144,6 @@ class CanvassController: UIViewController {
                     lastCoordinate = route.polyline.coordinates.last!
                     self.directions = route.steps
                 }
-                self.updateDirectionInstructions()
                 self.updateDirectionAnnotations(source: firstCoordinate, destination: lastCoordinate)
                 self.selectedCoord = nil
             }
@@ -155,6 +156,19 @@ class CanvassController: UIViewController {
         map.setRegion(region, animated: animated)
     }
 
+    private func displaySelectedLocation(_ location: Location?) {
+        var height: CGFloat = 0
+        if let loc = location {
+            height = InfoHeightConstant
+            infoLabel.text = "\(loc.streetNumber) \(loc.streetName)"
+            checkButton.alpha = (loc.hasKnocked == true) ? 1 : CheckmarkAlpha
+        }
+        UIView.animate(withDuration: 0.15) {
+            self.infoHeightConstraint.constant = height
+            self.view.layoutIfNeeded()
+        }
+    }
+
 }
 
 // MARK: - MKMapViewDelegate
@@ -162,10 +176,11 @@ class CanvassController: UIViewController {
 extension CanvassController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let annotation = view.annotation, let _ = routeManager.locationFor(guid: RouteManager.guidFor(annotation: annotation))?.annotation, !(annotation is MKUserLocation) {
+        if let annotation = view.annotation, let selectedLocation = routeManager.locationFor(guid: RouteManager.guidFor(annotation: annotation)), !(annotation is MKUserLocation) {
             selectedCoord = annotation.coordinate
+            displaySelectedLocation(selectedLocation)
+            drawRouteBetweenSelectedCoordinates()
         }
-        drawRouteBetweenSelectedCoordinates()
     }
 
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -191,7 +206,6 @@ extension CanvassController: MKMapViewDelegate {
             } else {
                 annotationView?.annotation = annotation
             }
-
             return annotationView
         } else {
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MapDirectionIdentifier)
