@@ -36,6 +36,7 @@
 		788B5E3923B3249200CABDEF /* AddressListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3823B3249200CABDEF /* AddressListController.swift */; };
 		788B5E3B23B32CDF00CABDEF /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3A23B32CDF00CABDEF /* AlertView.swift */; };
 		788B5E3D23B32D0B00CABDEF /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788B5E3C23B32D0B00CABDEF /* AlertView.xib */; };
+		788B5E3F23B32E2300CABDEF /* AddAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E3E23B32E2300CABDEF /* AddAddressController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		788B5E3823B3249200CABDEF /* AddressListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListController.swift; sourceTree = "<group>"; };
 		788B5E3A23B32CDF00CABDEF /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		788B5E3C23B32D0B00CABDEF /* AlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		788B5E3E23B32E2300CABDEF /* AddAddressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				788B5E1D23AF796300CABDEF /* VoteController.swift */,
 				788B5E1B23AF792E00CABDEF /* CanvassController.swift */,
 				788B5E3823B3249200CABDEF /* AddressListController.swift */,
+				788B5E3E23B32E2300CABDEF /* AddAddressController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				788B5E2023AF836D00CABDEF /* MenuHeaderCell.swift in Sources */,
 				7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */,
 				788B5E3B23B32CDF00CABDEF /* AlertView.swift in Sources */,
+				788B5E3F23B32E2300CABDEF /* AddAddressController.swift in Sources */,
 				788B5E3523B1AC2000CABDEF /* Location.swift in Sources */,
 				788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */,
 				7820B51723AE7433003B0DAA /* MainController.swift in Sources */,

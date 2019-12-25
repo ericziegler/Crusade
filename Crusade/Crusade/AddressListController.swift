@@ -32,6 +32,11 @@ class AddressListController: BaseViewController {
         setupNavBar()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addressTable.reloadData()
+    }
+
     private func setupNavBar() {
         self.title = "Addresses"
         self.navigationController?.navigationBar.titleTextAttributes = navTitleTextAttributes()
@@ -62,10 +67,10 @@ class AddressListController: BaseViewController {
     }
 
     @IBAction func addTapped(_ sender: AnyObject) {
-        print("ADD TAPPED")
-        // TODO: EZ - This is an example for AlertView usage. Remove once properly implemented in geocoding
-        let alert = AlertView.createAlertFor(parentController: self, title: "Address Not Found", message: "Please verify the correct street number and name.")
-        alert.showAlert()
+        let controller = AddAddressListController.createController()
+        let navController = BaseNavigationController(rootViewController: controller)
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated: true, completion: nil)
     }
 
 }

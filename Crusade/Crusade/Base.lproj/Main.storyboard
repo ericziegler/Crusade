@@ -372,6 +372,128 @@
             </objects>
             <point key="canvasLocation" x="3234.7826086956525" y="-40.178571428571423"/>
         </scene>
+        <!--Add Address List Controller-->
+        <scene sceneID="9fO-gd-0jX">
+            <objects>
+                <viewController storyboardIdentifier="AddAddressListControllerId" id="II7-t6-XHp" customClass="AddAddressListController" customModule="Crusade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9vu-LO-w0j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address added!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDI-N3-Mgg" customClass="BoldLabel" customModule="Crusade" customModuleProvider="target">
+                                <rect key="frame" x="263.5" y="44" width="130.5" height="27"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. 1234" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uid-R5-de4" customClass="StyledTextField" customModule="Crusade" customModuleProvider="target">
+                                <rect key="frame" x="20" y="139" width="150" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="1Ep-rG-Mxx"/>
+                                    <constraint firstAttribute="height" constant="60" id="ZzU-Et-hzx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="II7-t6-XHp" id="PW9-FG-Qlw"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJ7-AS-5So" customClass="RegularLabel" customModule="Crusade" customModuleProvider="target">
+                                <rect key="frame" x="20" y="98" width="150" height="33"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. Vote Ave." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bp-zp-89T" customClass="StyledTextField" customModule="Crusade" customModuleProvider="target">
+                                <rect key="frame" x="20" y="263" width="374" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="UUq-zT-DMt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="II7-t6-XHp" id="Y2o-PQ-rpT"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKi-gC-SNT" customClass="RegularLabel" customModule="Crusade" customModuleProvider="target">
+                                <rect key="frame" x="20" y="222" width="129" height="33"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RP8-TC-aUu">
+                                <rect key="frame" x="112" y="346" width="190" height="60"/>
+                                <color key="backgroundColor" red="0.08235294118" green="0.69019607839999997" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2D3-gT-ckt"/>
+                                    <constraint firstAttribute="width" constant="190" id="708-pl-FuW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="32"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTapped:" destination="II7-t6-XHp" eventType="touchUpInside" id="TEE-hS-uP0"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9D-f0-7YF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rzF-kv-b42">
+                                        <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzp-c5-oMb" customClass="RegularLabel" customModule="Crusade" customModuleProvider="target">
+                                        <rect key="frame" x="139" y="344" width="136" height="38"/>
+                                        <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="28"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.93725490199999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="rzF-kv-b42" firstAttribute="centerY" secondItem="K9D-f0-7YF" secondAttribute="centerY" id="L4n-pE-99u"/>
+                                    <constraint firstItem="hzp-c5-oMb" firstAttribute="centerX" secondItem="rzF-kv-b42" secondAttribute="centerX" id="keF-1m-Dyf"/>
+                                    <constraint firstItem="rzF-kv-b42" firstAttribute="top" secondItem="hzp-c5-oMb" secondAttribute="bottom" constant="8.5" id="vhV-T6-TVf"/>
+                                    <constraint firstItem="rzF-kv-b42" firstAttribute="centerX" secondItem="K9D-f0-7YF" secondAttribute="centerX" id="w5n-qe-NZb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.93725490199999995" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sxs-Kt-gI3" firstAttribute="trailing" secondItem="wDI-N3-Mgg" secondAttribute="trailing" constant="20" id="1JV-dD-AGh"/>
+                            <constraint firstItem="K9D-f0-7YF" firstAttribute="trailing" secondItem="Sxs-Kt-gI3" secondAttribute="trailing" id="1Rc-4u-Ec3"/>
+                            <constraint firstItem="uid-R5-de4" firstAttribute="top" secondItem="GJ7-AS-5So" secondAttribute="bottom" constant="8" id="3p5-9X-GzG"/>
+                            <constraint firstItem="iKi-gC-SNT" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" constant="20" id="6cP-Un-z9m"/>
+                            <constraint firstItem="K9D-f0-7YF" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" id="7mH-r6-q41"/>
+                            <constraint firstItem="K9D-f0-7YF" firstAttribute="top" secondItem="Sxs-Kt-gI3" secondAttribute="top" id="B7A-qo-wav"/>
+                            <constraint firstItem="K9D-f0-7YF" firstAttribute="bottom" secondItem="Sxs-Kt-gI3" secondAttribute="bottom" id="Bfs-tZ-rYp"/>
+                            <constraint firstItem="iKi-gC-SNT" firstAttribute="top" secondItem="uid-R5-de4" secondAttribute="bottom" constant="23" id="DJQ-p0-zcT"/>
+                            <constraint firstItem="GJ7-AS-5So" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" constant="20" id="DhE-2d-0xP"/>
+                            <constraint firstItem="5Bp-zp-89T" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" constant="20" id="WKl-HH-ac5"/>
+                            <constraint firstItem="Sxs-Kt-gI3" firstAttribute="trailing" secondItem="5Bp-zp-89T" secondAttribute="trailing" constant="20" id="XhP-pH-xZ5"/>
+                            <constraint firstItem="wDI-N3-Mgg" firstAttribute="top" secondItem="Sxs-Kt-gI3" secondAttribute="top" id="aXT-oR-ELM"/>
+                            <constraint firstItem="uid-R5-de4" firstAttribute="leading" secondItem="Sxs-Kt-gI3" secondAttribute="leading" constant="20" id="aw3-Ne-XcL"/>
+                            <constraint firstItem="5Bp-zp-89T" firstAttribute="top" secondItem="iKi-gC-SNT" secondAttribute="bottom" constant="8" id="c1g-eo-FBy"/>
+                            <constraint firstItem="RP8-TC-aUu" firstAttribute="top" secondItem="5Bp-zp-89T" secondAttribute="bottom" constant="23" id="ikf-R7-NNZ"/>
+                            <constraint firstItem="RP8-TC-aUu" firstAttribute="centerX" secondItem="9vu-LO-w0j" secondAttribute="centerX" id="kKd-R5-9p0"/>
+                            <constraint firstItem="GJ7-AS-5So" firstAttribute="top" secondItem="Sxs-Kt-gI3" secondAttribute="top" constant="54" id="xm7-7n-2f7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sxs-Kt-gI3"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="RP8-TC-aUu" id="2Ph-Wy-1RR"/>
+                        <outlet property="loadingIndicator" destination="rzF-kv-b42" id="Fff-CV-Ag4"/>
+                        <outlet property="loadingView" destination="K9D-f0-7YF" id="cis-yF-ZWj"/>
+                        <outlet property="numberField" destination="uid-R5-de4" id="TZE-Rw-gGM"/>
+                        <outlet property="statusLabel" destination="wDI-N3-Mgg" id="cb1-ci-QuG"/>
+                        <outlet property="streetField" destination="5Bp-zp-89T" id="NYc-qx-m5v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ra8-sF-OLF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3988.4057971014495" y="-39.508928571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AddressList" width="41" height="44"/>
