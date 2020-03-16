@@ -46,6 +46,7 @@ class VoteController: BaseViewController {
         voteWebView = WKWebView(frame: view.bounds, configuration: wkWebConfig)
         voteWebView.fillInParentView(parentView: view)
         voteWebView.navigationDelegate = self
+        voteWebView.uiDelegate = self
     }
 
     private func setupLoadingIndicator() {
@@ -81,6 +82,17 @@ extension VoteController: WKNavigationDelegate {
             self.loadingIndicator.stopAnimating()
             self.loadingIndicator.isHidden = true
         }
+    }
+
+}
+
+extension VoteController: WKUIDelegate {
+
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil || navigationAction.targetFrame!.isMainFrame == false {
+            webView.load(navigationAction.request)
+        }
+        return nil
     }
 
 }

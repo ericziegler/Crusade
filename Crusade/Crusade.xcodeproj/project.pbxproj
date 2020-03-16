@@ -18,6 +18,7 @@
 		7820B53523AE7580003B0DAA /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53423AE7580003B0DAA /* UIKitExtensions.swift */; };
 		7820B53723AE7593003B0DAA /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53623AE7593003B0DAA /* FoundationExtensions.swift */; };
 		7820B53923AE77DA003B0DAA /* MapKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7820B53823AE77DA003B0DAA /* MapKitExtensions.swift */; };
+		782AC07F241FACF2002F5CC0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782AC07E241FACF2002F5CC0 /* WebKit.framework */; };
 		788B5E1823AF724D00CABDEF /* CenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1723AF724D00CABDEF /* CenterController.swift */; };
 		788B5E1A23AF725E00CABDEF /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1923AF725E00CABDEF /* MenuController.swift */; };
 		788B5E1C23AF792E00CABDEF /* CanvassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5E1B23AF792E00CABDEF /* CanvassController.swift */; };
@@ -54,6 +55,7 @@
 		7820B53423AE7580003B0DAA /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		7820B53623AE7593003B0DAA /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		7820B53823AE77DA003B0DAA /* MapKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExtensions.swift; sourceTree = "<group>"; };
+		782AC07E241FACF2002F5CC0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		788B5E1723AF724D00CABDEF /* CenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterController.swift; sourceTree = "<group>"; };
 		788B5E1923AF725E00CABDEF /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		788B5E1B23AF792E00CABDEF /* CanvassController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvassController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782AC07F241FACF2002F5CC0 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +95,7 @@
 			children = (
 				7820B51323AE7433003B0DAA /* Crusade */,
 				7820B51223AE7433003B0DAA /* Products */,
+				782AC07D241FACF1002F5CC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +204,14 @@
 				7820B53223AE74F0003B0DAA /* BaseTableViewController.swift */,
 			);
 			name = BaseViewControllers;
+			sourceTree = "<group>";
+		};
+		782AC07D241FACF1002F5CC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				782AC07E241FACF2002F5CC0 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		788B5E2323AF9CC100CABDEF /* HTML */ = {
@@ -459,13 +471,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = MJA8334VZT;
 				INFOPLIST_FILE = Crusade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zigabytes.CanvassCrusade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -478,13 +491,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = MJA8334VZT;
 				INFOPLIST_FILE = Crusade/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zigabytes.CanvassCrusade;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
